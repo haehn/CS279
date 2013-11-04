@@ -10,8 +10,34 @@ window.onload = function() {
   var hover_trigger = null;
   var new_comment_box_shown = false;
 
-  window.document.body.onmousemove = function(e) {
 
+  // read all comments
+  DB.get(new Comment(), function(res) {
+
+    res = JSON.parse(res);
+
+    // loop through existing comments
+    for (var c in res) {
+
+      c = res[c];
+
+      var icon = document.createElement('div');
+      icon.id = 'comment-'+c.id;
+      icon.innerHTML = 'C!';
+      window.document.body.appendChild(icon);
+      $('#'+icon.id).css('height', '10px');
+      $('#'+icon.id).css('width', '10px');
+      $('#'+icon.id).css('position', 'fixed');
+      $('#'+icon.id).css('color', 'red');
+      $('#'+icon.id).css('top', c.y);
+      $('#'+icon.id).css('right', '5px');
+
+    }
+
+  });
+
+  window.document.body.onmousemove = function(e) {
+    console.log('test');
     if (hover_trigger) {
       // $('#new_comment').hide();
       clearTimeout(hover_trigger);
@@ -29,6 +55,52 @@ window.onload = function() {
 
   }
 
+
+function bubbleIframeMouseMove(iframe){
+    // Save any previous onmousemove handler
+    var existingOnMouseMove = iframe.contentWindow.onmousemove;
+
+    // Attach a new onmousemove listener
+    iframe.contentWindow.onmousemove = function(e){
+        // Fire any existing onmousemove listener 
+        if(existingOnMouseMove) existingOnMouseMove(e);
+
+        // Create a new event for the this window
+        var evt = document.createEvent("MouseEvents");
+
+        // We'll need this to offset the mouse move appropriately
+        var boundingClientRect = iframe.getBoundingClientRect();
+
+        // Initialize the event, copying exiting event values
+        // for the most part
+        evt.initMouseEvent( 
+            "mousemove", 
+            true, // bubbles
+            false, // not cancelable 
+            window,
+            e.detail,
+            e.screenX,
+            e.screenY, 
+            e.clientX + boundingClientRect.left, 
+            e.clientY + boundingClientRect.top, 
+            e.ctrlKey, 
+            e.altKey,
+            e.shiftKey, 
+            e.metaKey,
+            e.button, 
+            null // no related element
+        );
+
+        // Dispatch the mousemove event on the iframe element
+        iframe.dispatchEvent(evt);
+    };
+}
+
+// Get the iframe element we want to track mouse movements on
+var myIframe = document.getElementById("myIFrame");
+
+// Run it through the function to setup bubbling
+//bubbleIframeMouseMove(myIframe);
 
   new_comment = function() {
 
@@ -55,13 +127,16 @@ window.onload = function() {
 </script>
 
 </head>
-<body>
-<div style='float:left;'>
+<body style='margin:0px'>
+<div id='external_website' style='float:left;width:100%;height:100%;'>
+<!-- <iframe id='myIFrame' style='width:100%;height:100%;' src='http://monster.krash.net/d/CS279/code/proxy.php?url=<?php echo $_GET["url"]; ?>'></iframe> -->
+
 <?php
 
- include($_GET['url']);
+  include($_GET["url"]);
 
 ?>
+
 </div>
 <div id='mind_margin' style='top:0px;right:0px;width:30px;position:fixed;height:100%;background-color:black;'>
 Test1123

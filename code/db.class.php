@@ -207,8 +207,6 @@ class DB {
       $resultFields[] = &${
         $tmp_field};
     }
-    
-    //print_r($fields);
 
     // call $statement->bind_result for each of the expected fields
     call_user_func_array(array($statement, 'bind_result'), $resultFields);
