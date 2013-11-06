@@ -36,7 +36,16 @@ window.onload = function() {
 
   });
 
-  window.document.body.onmousemove = function(e) {
+  $('#new_comment')[0].onmousemove = function(e) {
+
+    clearTimeout(hover_trigger);
+
+    return false;
+
+  }
+
+
+  $('#external_website')[0].onmousemove = function(e) {
     console.log('test');
     if (hover_trigger) {
       // $('#new_comment').hide();
