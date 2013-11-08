@@ -21,10 +21,14 @@ DB.store = function(o, callback) {
 // grabs an object from the database using the get.php AJAX call
 DB.get = function(o, callback) {
 
+  if (!o.id) {
+    o.id = -1;
+  }
+
   // grab the JSON request
   $.ajax({
 
-    url: 'get.php?type=' + o._classname
+    url: 'get.php?type=' + o._classname + '&id=' + o.id
 
   }).done(callback);
 

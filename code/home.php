@@ -2,6 +2,7 @@
 <head>
 <script type='text/javascript' src='//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script>
 <script type='text/javascript' src='comment.model.js'></script>
+<script type='text/javascript' src='user.model.js'></script>
 <script type='text/javascript' src='db.js'></script>
 <script type='text/javascript'>
 
@@ -21,16 +22,23 @@ window.onload = function() {
 
       c = res[c];
 
-      var icon = document.createElement('div');
-      icon.id = 'comment-'+c.id;
-      icon.innerHTML = 'C!';
-      window.document.body.appendChild(icon);
-      $('#'+icon.id).css('height', '10px');
-      $('#'+icon.id).css('width', '10px');
-      $('#'+icon.id).css('position', 'fixed');
-      $('#'+icon.id).css('color', 'red');
-      $('#'+icon.id).css('top', c.y);
-      $('#'+icon.id).css('right', '5px');
+      u = new User()
+      u.id = c.user_id
+
+      DB.get(u, function(res) {
+
+        u = JSON.parse(res)[0];
+
+        console.log(u);
+
+        var comment = document.createElement('div');
+        comment.id = 'comment-'+c.id;
+        comment.innerHTML = '<b>' + u.username + '</b>'
+        comment.innerHTML += c.text
+
+        window.document.body.appendChild(comment);
+
+      });
 
     }
 
@@ -45,7 +53,7 @@ window.onload = function() {
   }
 
 
-  $('#external_website')[0].onmousemove = function(e) {
+  $('#content')[0].onmousemove = function(e) {
     console.log('test');
     if (hover_trigger) {
       // $('#new_comment').hide();
@@ -64,52 +72,6 @@ window.onload = function() {
 
   }
 
-
-function bubbleIframeMouseMove(iframe){
-    // Save any previous onmousemove handler
-    var existingOnMouseMove = iframe.contentWindow.onmousemove;
-
-    // Attach a new onmousemove listener
-    iframe.contentWindow.onmousemove = function(e){
-        // Fire any existing onmousemove listener 
-        if(existingOnMouseMove) existingOnMouseMove(e);
-
-        // Create a new event for the this window
-        var evt = document.createEvent("MouseEvents");
-
-        // We'll need this to offset the mouse move appropriately
-        var boundingClientRect = iframe.getBoundingClientRect();
-
-        // Initialize the event, copying exiting event values
-        // for the most part
-        evt.initMouseEvent( 
-            "mousemove", 
-            true, // bubbles
-            false, // not cancelable 
-            window,
-            e.detail,
-            e.screenX,
-            e.screenY, 
-            e.clientX + boundingClientRect.left, 
-            e.clientY + boundingClientRect.top, 
-            e.ctrlKey, 
-            e.altKey,
-            e.shiftKey, 
-            e.metaKey,
-            e.button, 
-            null // no related element
-        );
-
-        // Dispatch the mousemove event on the iframe element
-        iframe.dispatchEvent(evt);
-    };
-}
-
-// Get the iframe element we want to track mouse movements on
-var myIframe = document.getElementById("myIFrame");
-
-// Run it through the function to setup bubbling
-//bubbleIframeMouseMove(myIframe);
 
   new_comment = function() {
 
@@ -137,22 +99,29 @@ var myIframe = document.getElementById("myIFrame");
 
 </head>
 <body style='margin:0px'>
-<div id='external_website' style='float:left;width:100%;height:100%;'>
-<!-- <iframe id='myIFrame' style='width:100%;height:100%;' src='http://monster.krash.net/d/CS279/code/proxy.php?url=<?php echo $_GET["url"]; ?>'></iframe> -->
-
+<div id='content' style='border:1px solid black;margin:50px;padding:30px;float:left;width:50%;'>
 <?php
 
-  include($_GET["url"]);
+  include("article1.txt");
 
 ?>
-
 </div>
-<div id='mind_margin' style='top:0px;right:0px;width:30px;position:fixed;height:100%;background-color:black;'>
-Test1123
+<div id='mind_margin' style='float:left;width:40%'>
+
+<div id='hot' style='float:left;width:50%'><small><b>Popular Comments</b></small></div>
+<div id='cold' style='float:left;width:50%'></div>
+
 </div>
 <div id='new_comment' style='position:absolute;width:300px;right:50px;display:none;'>
 <textarea id='new_comment_text' style='width:300px;height:150px' autofocus></textarea>
 <button id='new_comment_submit' style='float:left;margin-right:0px;' onclick='new_comment();'>Add new comment</button>
+</div>
+<div id='existing_comment'>
+  <span id='username'>User123</span>
+  <span id='comment'></span>
+  <span id='upvotes'></span>
+  <span id='downvotes'></span>
+  <span id='actions'>Reply</span>
 </div>
 <div id='new_comment_line' style='position:absolute;height:1px;width:100px;display:none;border-top:1px dotted;color:red;'>
 </div>
