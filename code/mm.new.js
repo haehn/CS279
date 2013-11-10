@@ -46,7 +46,7 @@ MM.observe_interaction = function() {
     o.x = parseFloat($('#new_comment_line').css('left'),10);
     o.y = parseFloat($('#new_comment_line').css('top'),10);
 
-    o.timestamp = new Date();
+    o.timestamp = new Date(new Date().getTime() - 300*60000);
 
     o.user_id = MM.user.id;
 
