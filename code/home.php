@@ -63,7 +63,8 @@ window.onload = function() {
     <div id='cold'></div>
 
     <!-- COMMENT TEMPLATE -->
-    <div id='existing_comment' style='display:none;position:absolute;border: solid 1px black;width: 200px;height: 100px;'>
+    <div id='existing_comment' style='display:none;position:absolute;border:1px solid #dddddd;background-color: #b3def9;
+      border-radius: 15px 20px 5px 40px; padding:10px; -webkit-box-sizing: border-box; width: 200px;height: 100px;'>
       <div class='comment_head'>
         <span class='username'>User123</span>  
         <span class='date'>01/01/1970</span>

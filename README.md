@@ -1,4 +1,4 @@
 CS279
 =====
 
-CS279 final project
+CS279 Final Project

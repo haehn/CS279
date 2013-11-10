@@ -29,12 +29,38 @@ body {
 
 }
 
-#new_comment {
+#existing_comment {
+  display:none;
   position:absolute;
+  border:1px solid #dddddd;
+  background-color: #b3def9;
+  border-radius: 15px 20px 5px 40px; 
+  padding:10px;   
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;         /* Opera/IE 8+ */
+  width: 200px;
+  height: 100px;
+}
+
+#new_comment {
+  /*position:absolute;
   width:200px;
   right:50px;
   left:50%;
+  display:none;*/
+  left: 50%;
   display:none;
+  position:absolute;
+  border:1px solid #dddddd;
+  background-color: #b3def9;
+  border-radius: 15px 20px 5px 40px; 
+  padding:10px;   
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;         /* Opera/IE 8+ */
+  width: 200px;
+  height: 100px;
 }
 
 #hot {
