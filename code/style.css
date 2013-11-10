@@ -1,0 +1,53 @@
+html,body { height: 100%; margin: 0px; padding: 0px; }
+
+
+.small_text {
+  
+  font-size: 8pt;
+  font-family: sans-serif;
+
+}
+
+body {
+  font-family: sans-serif;  
+}
+
+#content {
+  border:1px solid black;
+  margin:20px;
+  padding:10px;
+  float:left;
+}
+
+#mind_margin {
+  float:left;
+  width:50%;
+  overflow-x: hidden;
+  position: absolute;
+  left: 50%;
+  height: 100%;
+
+}
+
+#new_comment {
+  position:absolute;
+  width:200px;
+  right:50px;
+  left:50%;
+  display:none;
+}
+
+#hot {
+  float:left;
+  width:205px;
+  height:100%;
+  border-right:1px dashed gray;
+}
+
+#cold {
+  position:absolute;
+  margin-left:210px;
+  width:100000px;
+  height:100%;
+  overflow-x:hidden;
+}

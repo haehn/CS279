@@ -12,4 +12,10 @@ Comment = function() {
 
   this.timestamp = '';
 
+  this.upvotes = 0;
+
+  this.downvotes = 0;
+
+  this.user_id = -1;
+
 }
