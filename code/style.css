@@ -22,7 +22,7 @@ body {
 #mind_margin {
   float:left;
   width:50%;
-  overflow-x: hidden;
+  /*overflow-x: hidden;*/
   position: absolute;
   left: 50%;
   height: 100%;
@@ -49,5 +49,5 @@ body {
   margin-left:210px;
   width:100000px;
   height:100%;
-  overflow-x:hidden;
+  /*overflow-x:hidden;*/
 }

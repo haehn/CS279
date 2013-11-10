@@ -123,6 +123,7 @@ MM.read_comments = function() {
                 var previous_y = parseInt(regular_comments[x-1][0].y,10);
 
                 if (current_y < ( previous_y + c_height/2 + 10) ) {
+                // if (current_y - previous_y < c_height)  {                  
 
                   // yes
                   left += $('#existing_comment').width() + 10; 
