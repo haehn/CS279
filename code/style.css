@@ -41,6 +41,7 @@ body {
   box-sizing: border-box;         /* Opera/IE 8+ */
   width: 200px;
   height: 100px;
+  z-index: 6000;
 }
 
 #new_comment {
@@ -55,12 +56,12 @@ body {
   border:1px solid #dddddd;
   background-color: #b3def9;
   border-radius: 15px 20px 5px 40px; 
-  padding:10px;   
   -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
   -moz-box-sizing: border-box;    /* Firefox, other Gecko */
   box-sizing: border-box;         /* Opera/IE 8+ */
   width: 200px;
   height: 100px;
+  z-index: 6000;
 }
 
 #hot {
