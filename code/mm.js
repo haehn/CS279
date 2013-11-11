@@ -79,6 +79,35 @@ MM.read_comments = function() {
 
             });
 
+            popular_comments.sort(function(a,b) {
+
+
+              // prefer newer comments
+              var time_difference = new Date(a[0].timestamp) - new Date(b[0].timestamp);
+
+              var c_height = $('#existing_comment').height();
+              var current_y = parseInt(a[0].y,10);
+              var previous_y = parseInt(b[0].y,10);
+              var overlap = current_y < ( previous_y + c_height/2 + 10);
+
+              console.log('o',overlap, time_difference);
+
+              if (time_difference < 0 && overlap) {
+                // b is newer and there is an overlap
+
+                // then put b in front of a
+                console.log('UES')
+                return b[0].y - a[0].y;
+
+              } else {
+
+                return a[0].y - b[0].y;
+
+              }
+
+            });
+
+
             copy_popular_comments = popular_comments.slice();
 
             continue_again = false;
@@ -87,7 +116,7 @@ MM.read_comments = function() {
             // display comments
             for (x in popular_comments) {
 
-              // console.log(x);
+              console.log(x);
 
               // if (continue_again) {
               //   continue_again = false;
@@ -102,10 +131,12 @@ MM.read_comments = function() {
               if (x>0) {
                 var c_height = $('#existing_comment').height();
                 var current_y = parseInt(popular_comments[x][0].y,10);
-                var previous_y = parseInt(copy_popular_comments[x-1][0].y,10);
+                var previous_y = parseInt(popular_comments[x-1][0].y,10);
+
+                //console.log('checking',popular_comments[x][0].id,copy_popular_comments[x-1][0].id)
 
                 // check if we have the same, then dont do anything
-                if (popular_comments[x][0].id != copy_popular_comments[x-1][0].id) {
+                if (popular_comments[x][0].id != popular_comments[x-1][0].id) {
 
                   console.log('not the same');
 
@@ -136,7 +167,7 @@ MM.read_comments = function() {
               var new_div = $('#existing_comment').clone();
               new_div.children('.comment_head').children('.username').html(c[1].username);
               new_div.children('.comment_head').children('.date').html(c[0].timestamp);
-              new_div.children('.comment_body').html(c[0].text);
+              new_div.children('.comment_body').html(c[0].text + ' ' + c[0].y + ' ' + c[0].id);
               new_div.children('.comment_footer').children('.upvotes').html(c[0].upvotes);
               new_div.children('.comment_footer').children('.downvotes').html(c[0].downvotes);
               new_div.attr('id', 'comment-'+c[0].id);
