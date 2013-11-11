@@ -64,6 +64,30 @@ body {
   z-index: 6000;
 }
 
+#new_comment_text {
+  /*width:177px;
+  height:65px;*/
+  margin-left: 10px;
+  margin-top: 10px;
+  padding-right: 18;
+  padding-bottom: 30;
+  border-radius: 5px;
+  border-color: inherit;
+  background-color: inherit;
+}
+
+#new_comment_submit {
+  float:right;
+  margin-right:10px;
+  background-color: #ddd;
+  color: #000;
+  border: none;
+  border-radius: 1px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  cursor: pointer;
+}
+
 #hot {
   float:left;
   width:205px;
