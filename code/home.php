@@ -71,7 +71,7 @@ window.onload = function() {
       <div class='comment_body'></div>
       <div class='comment_footer'>
         <span class='upvotes'>4</span>
-        <span class='downvotes'>2</span>
+        <span class='downvotes'>2<img height="10" src="http://www.timecamera.com/images/downArrow.gif"></span>
         <span class='actions'>Reply</span>  
       </div>
     </div>

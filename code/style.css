@@ -65,11 +65,9 @@ body {
 }
 
 #new_comment_text {
-  /*width:177px;
-  height:65px;*/
+  width:177px;
   margin-left: 10px;
   margin-top: 10px;
-  padding-right: 18;
   padding-bottom: 30;
   border-radius: 5px;
   border-color: inherit;
@@ -82,7 +80,7 @@ body {
   background-color: #ddd;
   color: #000;
   border: none;
-  border-radius: 1px;
+  border-radius: 5px;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   cursor: pointer;
@@ -102,3 +100,50 @@ body {
   height:100%;
   /*overflow-x:hidden;*/
 }
+
+.comment_head {
+  padding: 5px 10px;
+}
+
+.username {
+  font-size: 12px;
+  font-weight:bold;
+  text-transform: capitalize;
+}
+
+.date {
+  color: gray;
+}
+
+.comment_body {
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 177px;
+  height: 58px;
+  overflow-y: scroll;
+  margin-top: -3px;
+}
+
+.upvotes {
+  padding-left: 30px;
+  font-weight:bold;
+}
+
+.downvotes {
+  padding-left: 20px;
+}
+
+.actions {
+  padding: 2px 6px;
+  float: right;
+  margin-right: 25px;
+  background-color: #ddd;
+  color: #000;
+  border: none;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  cursor: pointer;
+}
+
+
