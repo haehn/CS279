@@ -70,8 +70,8 @@ window.onload = function() {
       </div>
       <div class='comment_body'></div>
       <div class='comment_footer'>
-        <span class='upvotes'>4</span>
-        <span class='downvotes'>2</span>
+        <span class='upvotes'>4<img height="10" src="http://en.clipart-fr.com/data/clipart/arrows/arrow_0047.gif"></span>
+        <span class='downvotes'>2<img height="10" src="http://en.clipart-fr.com/data/clipart/arrows/arrow_0041.gif"></span>
         <span class='actions'>Reply</span>  
       </div>
     </div>
@@ -85,10 +85,9 @@ window.onload = function() {
 
 <!-- NEW COMMENT -->
 <div id='new_comment'>
-  <textarea id='new_comment_text' style='width:200px;height:100px' autofocus></textarea>
-  <button id='new_comment_submit' style='float:left;margin-right:0px;' onclick='MM.submit_new_comment();'>Add new comment</button>
-</div>
-<div id='new_comment_line' class='comment_line' style='position:absolute;height:1px;width:100px;display:none;border-top:1px dotted;color:red;'>
-</div>
+  <textarea id='new_comment_text' autofocus></textarea>
+  <button id='new_comment_submit' onclick='MM.submit_new_comment();'>Add new comment</button>
+</div>  
+<div id='new_comment_line' class='comment_line'></div>
 
 </body>
