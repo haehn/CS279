@@ -146,4 +146,15 @@ body {
   cursor: pointer;
 }
 
+.comment_line {
+  color: #ddd;
+  position:absolute;
+  height:1px;
+  width:100px;
+  display:none;
+  border-top:1.5px dotted;
+}
 
+#new_comment_line {
+  color: #000;
+}
