@@ -269,3 +269,16 @@ MM.read_comments = function() {
   }); // db
 
 }
+
+MM.setup_slider = function() {
+
+  MM.scrollbar = $( ".scroll-bar" ).slider({
+    slide: function( event, ui ) {
+
+      $('#mind_margin').scrollLeft($('#mind_margin').width()/100 * ui.value);
+
+    }
+  });
+
+
+}

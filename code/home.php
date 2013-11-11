@@ -1,7 +1,9 @@
 <html>
 <head>
 <link href="style.css" rel="stylesheet"/>
+<link href="jquery-ui-1.10.3.custom.min.css" rel="stylesheet"/>
 <script type='text/javascript' src='//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script>
+<script type='text/javascript' src='jquery-ui-1.10.3.custom.min.js'></script>
 <script type='text/javascript' src='comment.model.js'></script>
 <script type='text/javascript' src='user.model.js'></script>
 <script type='text/javascript' src='db.js'></script>
@@ -34,6 +36,8 @@ window.onload = function() {
 
     // read and show old comments
     MM.read_comments();
+
+    MM.setup_slider();
 
   });
 
@@ -89,5 +93,9 @@ window.onload = function() {
   <button id='new_comment_submit' onclick='MM.submit_new_comment();'>Add new comment</button>
 </div>  
 <div id='new_comment_line' class='comment_line'></div>
+
+   <div class="scroll-bar-wrap ui-widget-content ui-corner-bottom" style='width:45%'>
+      <div class="scroll-bar" style="width: 47%;position: fixed;left: 52%;bottom: 1%;z-index: 100000;"></div>
+    </div>
 
 </body>
