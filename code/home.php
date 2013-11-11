@@ -87,8 +87,8 @@ window.onload = function() {
 <div id='new_comment'>
   <textarea id='new_comment_text' style='width:200px;height:100px' autofocus></textarea>
   <button id='new_comment_submit' style='float:left;margin-right:0px;' onclick='MM.submit_new_comment();'>Add new comment</button>
-</div>  
-<div id='new_comment_line' style='position:absolute;height:1px;width:100px;display:none;border-top:1px dotted;color:red;'>
+</div>
+<div id='new_comment_line' class='comment_line' style='position:absolute;height:1px;width:100px;display:none;border-top:1px dotted;color:red;'>
 </div>
 
 </body>

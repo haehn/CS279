@@ -72,10 +72,66 @@ MM.read_comments = function() {
 
             }
 
-            // display comments
-            for (c in popular_comments) {
+            // order popular comments by y
+            popular_comments.sort(function(a,b) {
 
-              c = popular_comments[c];
+              return a[0].y - b[0].y;
+
+            });
+
+            copy_popular_comments = popular_comments.slice();
+
+            continue_again = false;
+
+
+            // display comments
+            for (x in popular_comments) {
+
+              // console.log(x);
+
+              // if (continue_again) {
+              //   continue_again = false;
+              //   console.log('continuing again');
+              //   continue;
+              // }
+
+              c = popular_comments[x];
+
+              // check if there is an overlap
+              // if (c[0].y <= c2[0].y-$('#existing_comment').height()/2 && c[0].y <= c2[0].y+$('#existing_comment').height()/2) {
+              if (x>0) {
+                var c_height = $('#existing_comment').height();
+                var current_y = parseInt(popular_comments[x][0].y,10);
+                var previous_y = parseInt(copy_popular_comments[x-1][0].y,10);
+
+                // check if we have the same, then dont do anything
+                if (popular_comments[x][0].id != copy_popular_comments[x-1][0].id) {
+
+                  console.log('not the same');
+
+                  if (current_y < ( previous_y + c_height/2 + 10) ) {
+                  // if (current_y - previous_y < c_height)  {                  
+
+                    // yes
+
+                    // move the current comment to regular_comments
+                    regular_comments.push(c);
+
+                    // and remove it from popular comments
+                    copy_popular_comments.splice(x, 1);
+
+                    //console.log(c[0].y, c2[0].y);
+                    console.log('FOUND OVERLAP',current_y, previous_y)
+
+                    continue_again = true;
+                    // skip this guy
+                    continue;
+
+
+                  }
+
+                }
+              }
 
               var new_div = $('#existing_comment').clone();
               new_div.children('.comment_head').children('.username').html(c[1].username);
@@ -86,6 +142,7 @@ MM.read_comments = function() {
               new_div.attr('id', 'comment-'+c[0].id);
               new_div.show();
               new_div.addClass('small_text');
+              new_div.addClass('comment-del');
               new_div.css('top',c[0].y-$('#existing_comment').height()/2);
               // new_div.css('left',c[0].x);
 
@@ -96,12 +153,19 @@ MM.read_comments = function() {
               new_line.css('top',parseInt(c[0].y,10));
               new_line.css('left',$(window).width()/2-parseFloat($('#content').css('margin'),10));
               new_line.css('width',parseInt($(content).css('margin'),10));
+              new_line.addClass('comment-del');
               new_line.attr('id', 'comment-line-'+c[0].id);
+
               $('body').append(new_line);
               new_line.show();
 
 
             }
+
+
+
+
+
 
             // order regular comments by y
             regular_comments.sort(function(a,b) {
@@ -126,7 +190,7 @@ MM.read_comments = function() {
                 // if (current_y - previous_y < c_height)  {                  
 
                   // yes
-                  left += $('#existing_comment').width() + 10; 
+                  left += $('#existing_comment').width() + 30; 
                   //console.log(c[0].y, c2[0].y);
                   console.log('FOUND OVERLAP',current_y, previous_y)
 
@@ -146,6 +210,7 @@ MM.read_comments = function() {
               new_div.show();
               new_div.css('top',c[0].y-$('#existing_comment').height()/2);
               new_div.css('margin-left', left);
+              new_div.addClass('comment-del');
               // new_div.css('left',c[0].x);
 
               $('#cold').append(new_div);
@@ -155,6 +220,7 @@ MM.read_comments = function() {
               new_line.css('left',$(window).width()/2-parseFloat($('#content').css('margin'),10));
               new_line.css('width',parseInt($(content).css('margin'),10)+parseInt($('#cold').css('margin-left'),10)+left);
               new_line.attr('id', 'comment-line-'+c[0].id);
+              new_line.addClass('comment-del');
               $('body').append(new_line);
               new_line.show();              
 

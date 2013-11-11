@@ -15,6 +15,14 @@ class Comment extends Object {
 
   public $timestamp = '';
 
+  public $upvotes = 0;
+
+  public $downvotes = 0;
+
+  public $user_id = -1;
+
+  public $metric_bonus = 0;
+
 }
 
 

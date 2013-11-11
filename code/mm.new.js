@@ -50,7 +50,16 @@ MM.observe_interaction = function() {
 
     o.user_id = MM.user.id;
 
-    DB.store(o, function(res) { alert('stored'); })
+    DB.store(o, function(res) { 
+
+      // recreate UI
+      $('.comment-del').remove();
+
+      MM.read_comments();
+      $('#new_comment').hide();
+      $('#new_comment_line').hide();
+
+    })
 
   }
 }

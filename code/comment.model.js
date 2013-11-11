@@ -18,4 +18,6 @@ Comment = function() {
 
   this.user_id = -1;
 
+  this.metric_bonus = 0;
+
 }
