@@ -22,7 +22,7 @@ MM.observe_interaction = function() {
     }
 
     hover_trigger = setTimeout(function() {
-      $('#new_comment').css('top',$(window).scrollTop()+e.y-$('#new_comment_text').height()/2);
+      $('#new_comment').css('top',$(window).scrollTop()+e.y-$('#new_comment').height()/2);
       $('#new_comment').show();
       $('#new_comment_line').css('top',$(window).scrollTop()+e.y);
       $('#new_comment_line').css('left',e.x);
