@@ -182,12 +182,13 @@ MM.read_comments = function() {
               var new_line = $('#new_comment_line').clone();
               // new_line.css('top',$(window).scrollTop()+parseInt(c[0].y,10)+$('#existing_comment').height()/2);
               new_line.css('top',parseInt(c[0].y,10));
-              new_line.css('left',$(window).width()/2-parseFloat($('#content').css('margin'),10));
-              new_line.css('width',parseInt($(content).css('margin'),10));
+              // new_line.css('left',$(window).width()/2-parseFloat($('#content').css('margin'),10));
+              new_line.css('left',0);
+              new_line.css('width',parseInt($(content).css('margin'),10)+20);
               new_line.addClass('comment-del');
               new_line.attr('id', 'comment-line-'+c[0].id);
 
-              $('body').append(new_line);
+              $('#mind_margin').append(new_line);
               new_line.show();
 
 
@@ -248,11 +249,12 @@ MM.read_comments = function() {
 
               var new_line = $('#new_comment_line').clone();
               new_line.css('top',parseInt(c[0].y,10));
-              new_line.css('left',$(window).width()/2-parseFloat($('#content').css('margin'),10));
-              new_line.css('width',parseInt($(content).css('margin'),10)+parseInt($('#cold').css('margin-left'),10)+left);
+              // new_line.css('left',$(window).width()/2-parseFloat($('#content').css('margin'),10));
+              new_line.css('left',-parseFloat($('#content').css('margin'),10));
+              new_line.css('width',parseInt($(content).css('margin'),10)+parseInt($('#cold').css('margin-left'),10)+left+20);
               new_line.attr('id', 'comment-line-'+c[0].id);
               new_line.addClass('comment-del');
-              $('body').append(new_line);
+              $('#mind_margin').append(new_line);
               new_line.show();              
 
             }
