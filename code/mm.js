@@ -271,7 +271,7 @@ MM.read_comments = function() {
 
 
             console.log('mm', MM.max_comment_x);
-            $('#cold').css('width',MM.max_comment_x);
+            $('#cold').css('width',MM.max_comment_x+500);
 
             MM.setup_slider();            
 
@@ -326,5 +326,25 @@ MM.downvote = function(c) {
     MM.create_ui();
 
   });
+
+}
+
+MM.takeover_sidescroll = function() {
+
+    $('#mind_margin').bind('mousewheel', function(e){
+
+        if(e.originalEvent.wheelDelta /120 > 0) {
+            $('#mind_margin').scrollLeft($('#mind_margin').scrollLeft()-30);
+        }
+        else{
+            $('#mind_margin').scrollLeft($('#mind_margin').scrollLeft()+30);
+        }
+        console.log($('#mind_margin').scrollLeft(),MM.max_comment_x,$('#mind_margin').scrollLeft()/MM.max_comment_x*100);
+        
+        $('.scroll-bar').slider('value', $('#mind_margin').scrollLeft()/MM.max_comment_x*100);
+
+        return false;
+
+    });
 
 }

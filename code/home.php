@@ -37,6 +37,8 @@ window.onload = function() {
     // read and show old comments
     MM.read_comments();
 
+    MM.takeover_sidescroll();
+
   });
 
 }
