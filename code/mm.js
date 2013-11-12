@@ -17,6 +17,15 @@ MM.read_comments = function() {
     for (var c in res) {
 
       c = res[c];
+       
+      if (c.parent_id != "-1") {
+
+        number_of_comments--;
+        continue;       
+
+      }
+
+      console.log('dsfdsfds')
 
       u = new User()
       u.id = c.user_id
