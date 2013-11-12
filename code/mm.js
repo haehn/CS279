@@ -4,6 +4,7 @@ MM.read_comments = function() {
   
   // read all comments
   comments = [];
+  responses = {};
   popular_comments = [];
   regular_comments = [];
   DB.get(new Comment(), function(res) {
@@ -20,12 +21,17 @@ MM.read_comments = function() {
        
       if (c.parent_id != "-1") {
 
+        if (typeof responses[c.parent_id] == 'undefined') {
+          responses[c.parent_id] = [];
+        }
+
+        responses[c.parent_id].push(c);
+
+
         number_of_comments--;
         continue;       
 
       }
-
-      console.log('dsfdsfds')
 
       u = new User()
       u.id = c.user_id
@@ -173,6 +179,7 @@ MM.read_comments = function() {
                   }
 
                 }
+
               }
 
               var new_div = $('#existing_comment').clone();
@@ -205,6 +212,42 @@ MM.read_comments = function() {
               $('#mind_margin').append(new_line);
               new_line.show();
 
+
+              // check if we have responses
+              if (typeof responses[parseInt(c[0].id,10)] != 'undefined') {
+
+
+                    new_div.on('click', MM.expand_replies.bind(this,new_div));
+                    new_div.children('.comment_footer').children('.actions').show();
+
+                    for (r in responses[c[0].id]) {
+
+                      r = responses[c[0].id][r];
+
+                      // then add all responses to some container
+                      var new_div2 = $('#existing_comment_response').clone();
+                      new_div2.children('.comment_head').children('.username').html(r.username);
+                      new_div2.attr('title', r.timestamp);
+                      new_div2.children('.comment_body').html(r.text);
+                      new_div2.children('.comment_footer').children('.upvotes').html(r.upvotes);
+                      new_div2.children('.comment_footer').children('.downvotes').html(r.downvotes);
+                      new_div2.attr('id', 'comment-'+r.id);
+                      new_div2.hide();
+                      new_div2.addClass('small_text');
+                      // new_div.addClass('comment-del');
+                      // new_div.css('top',c[0].y-$('#existing_comment').height()/2);
+                      // new_div.css('left',c[0].x);
+
+                      new_div2.children('.comment_footer').children('.upvoteimg').on('click', MM.upvote.bind(this,r));
+                      new_div2.children('.comment_footer').children('.downvoteimg').on('click', MM.downvote.bind(this,r));
+
+                      new_div.append(new_div2);
+
+
+
+                    }
+
+              }
 
             }
 
@@ -276,6 +319,42 @@ MM.read_comments = function() {
               $('#mind_margin').append(new_line);
               new_line.show();              
 
+
+              // check if we have responses
+              if (typeof responses[parseInt(c[0].id,10)] != 'undefined') {
+                    
+                    new_div.on('click', MM.expand_replies.bind(this,new_div));
+                    new_div.children('.comment_footer').children('.actions').show();
+                    for (r in responses[c[0].id]) {
+
+                      r = responses[c[0].id][r];
+
+                      // then add all responses to some container
+                      var new_div2 = $('#existing_comment_response').clone();
+                      new_div2.children('.comment_head').children('.username').html(r.username);
+                      new_div2.attr('title', r.timestamp);
+                      new_div2.children('.comment_body').html(r.text);
+                      new_div2.children('.comment_footer').children('.upvotes').html(r.upvotes);
+                      new_div2.children('.comment_footer').children('.downvotes').html(r.downvotes);
+                      new_div2.attr('id', 'comment-'+r.id);
+                      new_div2.hide();
+                      new_div2.addClass('small_text');
+                      // new_div.addClass('comment-del');
+                      // new_div.css('top',c[0].y-$('#existing_comment').height()/2);
+                      // new_div.css('left',c[0].x);
+
+                      new_div2.children('.comment_footer').children('.upvoteimg').on('click', MM.upvote.bind(this,r));
+                      new_div2.children('.comment_footer').children('.downvoteimg').on('click', MM.downvote.bind(this,r));
+
+                      new_div.append(new_div2);
+
+
+
+                    }
+
+              }
+
+
             }
 
 
@@ -318,9 +397,15 @@ MM.upvote = function(c) {
 
   DB.store(c, function() {
 
-    MM.create_ui();
+    //MM.create_ui();
+
+
+    $('#comment-'+c.id).children('.comment_footer').children('.upvotes').html(c.upvotes);
+
 
   });
+
+  return false;
 
 }
 
@@ -332,9 +417,13 @@ MM.downvote = function(c) {
 
   DB.store(c, function() {
 
-    MM.create_ui();
+    //MM.create_ui();
+
+    $('#comment-'+c.id).children('.comment_footer').children('.downvotes').html(c.downvotes);
 
   });
+
+  return false;
 
 }
 
@@ -348,12 +437,38 @@ MM.takeover_sidescroll = function() {
         else{
             $('#mind_margin').scrollLeft($('#mind_margin').scrollLeft()+30);
         }
-        console.log($('#mind_margin').scrollLeft(),MM.max_comment_x,$('#mind_margin').scrollLeft()/MM.max_comment_x*100);
-        
+
         $('.scroll-bar').slider('value', $('#mind_margin').scrollLeft()/MM.max_comment_x*100);
 
         return false;
 
     });
+
+}
+
+
+MM.expand_replies = function(div) {
+console.log('sdsd')
+  if (div.css('z-index') == '10000') {
+
+    div.css('height','150px');
+
+    div.css('z-index','6000');    
+
+    div.children('.comment_response').hide();
+
+    div.children('.comment_footer').children('.actions').html('v');
+
+  } else {
+
+    div.css('height', 'auto'); 
+
+    div.css('z-index','10000');
+
+    div.children('.comment_response').show();
+
+    div.children('.comment_footer').children('.actions').html('^');
+
+  }
 
 }

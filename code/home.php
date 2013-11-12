@@ -75,10 +75,20 @@ window.onload = function() {
       <div class='comment_footer'>
         <span class='upvotes'>4</span> <img class='upvoteimg' height="10" style='cursor:pointer;' src="arrow_0047.gif">
         <span class='downvotes'>2</span> <img class='downvoteimg' height="10" style='cursor:pointer;' src="arrow_0041.gif">
-        <span class='actions' style='display:none' >Reply</span>  
+        <span class='actions' style='display:none' >v</span>  
       </div>
     </div>
-
+    <div id='existing_comment_response' class='comment_response'>
+      <div class='comment_head'>
+        <span class='username'>User123</span>  
+      </div>
+      <div class='comment_body'></div>
+      <div class='comment_footer'>
+        <span class='upvotes'>4</span> <img class='upvoteimg' height="10" style='cursor:pointer;' src="arrow_0047.gif">
+        <span class='downvotes'>2</span> <img class='downvoteimg' height="10" style='cursor:pointer;' src="arrow_0041.gif">
+        <span class='actions' style='display:none' >v</span>  
+      </div>
+    </div>
   </div>
 
 </div>

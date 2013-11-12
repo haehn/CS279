@@ -21,6 +21,8 @@ class Comment extends Object {
 
   public $user_id = -1;
 
+  public $username = '';
+
 }
 
 
