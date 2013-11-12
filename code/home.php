@@ -37,8 +37,6 @@ window.onload = function() {
     // read and show old comments
     MM.read_comments();
 
-    MM.setup_slider();
-
   });
 
 }
@@ -63,20 +61,19 @@ window.onload = function() {
 
   <div id='mind_margin'>
 
-    <div id='hot'><small><b>Popular Comments</b></small></div>
+    <div id='hot'></div>
     <div id='cold'></div>
 
     <!-- COMMENT TEMPLATE -->
     <div id='existing_comment' class='comment'>
       <div class='comment_head'>
         <span class='username'>User123</span>  
-        <span class='date'>01/01/1970</span>
       </div>
       <div class='comment_body'></div>
       <div class='comment_footer'>
-        <span class='upvotes'>4<img height="10" src="http://en.clipart-fr.com/data/clipart/arrows/arrow_0047.gif"></span>
-        <span class='downvotes'>2<img height="10" src="http://en.clipart-fr.com/data/clipart/arrows/arrow_0041.gif"></span>
-        <span class='actions'>Reply</span>  
+        <span class='upvotes'>4</span> <img class='upvoteimg' height="10" style='cursor:pointer;' src="arrow_0047.gif">
+        <span class='downvotes'>2</span> <img class='downvoteimg' height="10" style='cursor:pointer;' src="arrow_0041.gif">
+        <span class='actions' style='display:none' >Reply</span>  
       </div>
     </div>
 

@@ -3,7 +3,7 @@ html,body { height: 100%; margin: 0px; padding: 0px;}
 
 .small_text {
   
-  font-size: 8pt;
+  font-size: 10pt;
   font-family: sans-serif;
 
 }
@@ -35,15 +35,15 @@ body {
 .comment {
   display:none;
   position:absolute;
-  border:1px solid #dddddd;
-  background-color: #b3def9;
+  border:1px solid #c77405;
+  background-color: #fbcb09;
   border-radius: 15px 20px 5px 40px; 
   /*padding:10px; */  
   -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
   -moz-box-sizing: border-box;    /* Firefox, other Gecko */
   box-sizing: border-box;         /* Opera/IE 8+ */
-  width: 200px;
-  height: 100px;
+  width: 400px;
+  height: 150px;
   z-index: 6000;
 }
 
@@ -63,22 +63,24 @@ body {
   -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
   -moz-box-sizing: border-box;    /* Firefox, other Gecko */
   box-sizing: border-box;         /* Opera/IE 8+ */
-  width: 200px;
-  height: 100px;
+  width: 400px;
+  height: 150px;
   z-index: 6000;
 }
 
 #new_comment_text {
-  width:177px;
+  width:374px;
   margin-left: 10px;
   margin-top: 10px;
   padding-bottom: 30;
   border-radius: 5px;
   border-color: inherit;
+  height: 100px;
   background-color: inherit;
 }
 
 #new_comment_submit {
+  margin-top: 10px;
   float:right;
   margin-right:10px;
   background-color: #ddd;
@@ -92,15 +94,15 @@ body {
 
 #hot {
   float:left;
-  width:205px;
+  width:420px;
   height:100%;
-  border-right:1px dashed gray;
+  /*border-right:1px dashed gray;*/
 }
 
 #cold {
   position:absolute;
-  margin-left:210px;
-  width:100000px;
+  margin-left:420px;
+  width:10000px;
   height:100%;
   overflow-x:hidden;
 }
@@ -122,10 +124,12 @@ body {
 .comment_body {
   padding-left: 10px;
   padding-right: 10px;
-  width: 177px;
-  height: 58px;
+  width: 354px;
+  height: 87px;
   overflow-y: scroll;
   margin-top: -3px;
+  margin-bottom: 15px;
+  overflow-wrap: break-word;
 }
 
 .upvotes {

@@ -21,8 +21,6 @@ class Comment extends Object {
 
   public $user_id = -1;
 
-  public $metric_bonus = 0;
-
 }
 
 

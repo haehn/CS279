@@ -22,15 +22,25 @@ MM.observe_interaction = function() {
     }
 
     hover_trigger = setTimeout(function() {
-      $('#new_comment').css('top',$(window).scrollTop()+e.y-$('#new_comment').height()/2);
-      $('#new_comment').show();
-      $('#new_comment_line').css('top',$(window).scrollTop()+e.y);
-      $('#new_comment_line').css('left',e.x);
-      $('#new_comment_line').css('width',$(window).width()/2-e.x+20);
-      $('#new_comment_line').show();
-      new_comment_box_shown = true;
-    }, 1000);
+      MM.show_new_comment(e);
+      $('#new_comment_text').focus();
+    }, 5000);
 
+  }
+
+  $('#content')[0].onclick = function(e) {  
+      MM.show_new_comment(e);
+      $('#new_comment_text').focus();
+  }
+
+  MM.show_new_comment = function(e) {
+    $('#new_comment').css('top',$(window).scrollTop()+e.y-$('#new_comment').height()/2);
+    $('#new_comment').show();
+    $('#new_comment_line').css('top',$(window).scrollTop()+e.y);
+    $('#new_comment_line').css('left',e.x);
+    $('#new_comment_line').css('width',$(window).width()/2-e.x+20);
+    $('#new_comment_line').show();
+    new_comment_box_shown = true;
   }
 
 
@@ -52,14 +62,21 @@ MM.observe_interaction = function() {
 
     DB.store(o, function(res) { 
 
+      MM.create_ui();
+
+    })
+
+  }
+}
+
+MM.create_ui = function() {
+
       // recreate UI
       $('.comment-del').remove();
 
       MM.read_comments();
       $('#new_comment').hide();
       $('#new_comment_line').hide();
+      $('#new_comment_text').val('');
 
-    })
-
-  }
 }

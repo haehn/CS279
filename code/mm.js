@@ -57,7 +57,9 @@ MM.read_comments = function() {
 
             }
 
-            console.log(comments);
+            // console.log(comments);
+
+            MM.max_comment_x = 0;
 
             // check which are popular
             for (c in comments) {    
@@ -90,13 +92,13 @@ MM.read_comments = function() {
               var previous_y = parseInt(b[0].y,10);
               var overlap = current_y < ( previous_y + c_height/2 + 10);
 
-              console.log('o',overlap, time_difference);
+              // console.log('o',overlap, time_difference);
 
               if (time_difference < 0 && overlap) {
                 // b is newer and there is an overlap
 
                 // then put b in front of a
-                console.log('UES')
+                // console.log('UES')
                 return b[0].y - a[0].y;
 
               } else {
@@ -116,7 +118,7 @@ MM.read_comments = function() {
             // display comments
             for (x in popular_comments) {
 
-              console.log(x);
+              // console.log(x);
 
               // if (continue_again) {
               //   continue_again = false;
@@ -138,7 +140,7 @@ MM.read_comments = function() {
                 // check if we have the same, then dont do anything
                 if (popular_comments[x][0].id != popular_comments[x-1][0].id) {
 
-                  console.log('not the same');
+                  // console.log('not the same');
 
                   if (current_y < ( previous_y + c_height/2 + 10) ) {
                   // if (current_y - previous_y < c_height)  {                  
@@ -152,7 +154,7 @@ MM.read_comments = function() {
                     copy_popular_comments.splice(x, 1);
 
                     //console.log(c[0].y, c2[0].y);
-                    console.log('FOUND OVERLAP',current_y, previous_y)
+                    // console.log('FOUND OVERLAP',current_y, previous_y)
 
                     continue_again = true;
                     // skip this guy
@@ -166,8 +168,8 @@ MM.read_comments = function() {
 
               var new_div = $('#existing_comment').clone();
               new_div.children('.comment_head').children('.username').html(c[1].username);
-              new_div.children('.comment_head').children('.date').html(c[0].timestamp);
-              new_div.children('.comment_body').html(c[0].text + ' ' + c[0].y + ' ' + c[0].id);
+              new_div.attr('title', c[0].timestamp);
+              new_div.children('.comment_body').html(c[0].text);
               new_div.children('.comment_footer').children('.upvotes').html(c[0].upvotes);
               new_div.children('.comment_footer').children('.downvotes').html(c[0].downvotes);
               new_div.attr('id', 'comment-'+c[0].id);
@@ -176,6 +178,9 @@ MM.read_comments = function() {
               new_div.addClass('comment-del');
               new_div.css('top',c[0].y-$('#existing_comment').height()/2);
               // new_div.css('left',c[0].x);
+
+              new_div.children('.comment_footer').children('.upvoteimg').on('click', MM.upvote.bind(this,c[0]));
+              new_div.children('.comment_footer').children('.downvoteimg').on('click', MM.downvote.bind(this,c[0]));
 
               $('#hot').append(new_div);
 
@@ -226,6 +231,8 @@ MM.read_comments = function() {
                   //console.log(c[0].y, c2[0].y);
                   console.log('FOUND OVERLAP',current_y, previous_y)
 
+                  MM.max_comment_x = Math.max(MM.max_comment_x, left + $('#existing_comment').width());
+
                 } else {
                   left = 0;
                 }
@@ -233,8 +240,8 @@ MM.read_comments = function() {
 
               var new_div = $('#existing_comment').clone();
               new_div.children('.comment_head').children('.username').html(c[1].username);
-              new_div.children('.comment_head').children('.date').html(c[0].timestamp);
-              new_div.children('.comment_body').html(c[0].text + ' ' + c[0].y + ' ' + left);
+              new_div.attr('title', c[0].timestamp);
+              new_div.children('.comment_body').html(c[0].text);
               new_div.children('.comment_footer').children('.upvotes').html(c[0].upvotes);
               new_div.children('.comment_footer').children('.downvotes').html(c[0].downvotes);
               new_div.attr('id', 'comment-'+c[0].id);
@@ -244,6 +251,9 @@ MM.read_comments = function() {
               new_div.css('margin-left', left);
               new_div.addClass('comment-del');
               // new_div.css('left',c[0].x);
+
+              new_div.children('.comment_footer').children('.upvoteimg').on('click', MM.upvote.bind(this,c[0]));
+              new_div.children('.comment_footer').children('.downvoteimg').on('click', MM.downvote.bind(this,c[0]));
 
               $('#cold').append(new_div);
 
@@ -260,11 +270,19 @@ MM.read_comments = function() {
             }
 
 
+            console.log('mm', MM.max_comment_x);
+            $('#cold').css('width',MM.max_comment_x);
+
+            MM.setup_slider();            
+
+
         }
 
       }.bind(this,c));
 
     } // for
+
+
 
   }); // db
 
@@ -275,10 +293,38 @@ MM.setup_slider = function() {
   MM.scrollbar = $( ".scroll-bar" ).slider({
     slide: function( event, ui ) {
 
-      $('#mind_margin').scrollLeft($('#mind_margin').width()/100 * ui.value);
+      $('#mind_margin').scrollLeft(MM.max_comment_x/100 * ui.value);
 
     }
   });
 
+
+}
+
+MM.upvote = function(c) {
+
+  c.upvotes = parseInt(c.upvotes,10) + 1;
+  c._classname = 'comment';
+  delete c.metric;
+
+  DB.store(c, function() {
+
+    MM.create_ui();
+
+  });
+
+}
+
+MM.downvote = function(c) {
+
+  c.downvotes = parseInt(c.downvotes,10) + 1;
+  c._classname = 'comment';
+  delete c.metric;
+
+  DB.store(c, function() {
+
+    MM.create_ui();
+
+  });
 
 }
