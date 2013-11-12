@@ -75,7 +75,7 @@ body {
   box-sizing: border-box;         /* Opera/IE 8+ */
   width: 400px;
   height: 150px;
-  z-index: 6000;
+  z-index: 60000;
 }
 
 #new_comment_text {

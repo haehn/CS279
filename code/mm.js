@@ -217,7 +217,7 @@ MM.read_comments = function() {
               if (typeof responses[parseInt(c[0].id,10)] != 'undefined') {
 
 
-                    new_div.on('click', MM.expand_replies.bind(this,new_div));
+                    new_div.children('.comment_footer').on('click', MM.expand_replies.bind(this,new_div));
                     new_div.children('.comment_footer').children('.actions').show();
 
                     for (r in responses[c[0].id]) {
@@ -323,7 +323,7 @@ MM.read_comments = function() {
               // check if we have responses
               if (typeof responses[parseInt(c[0].id,10)] != 'undefined') {
                     
-                    new_div.on('click', MM.expand_replies.bind(this,new_div));
+                    new_div.children('.comment_footer').on('click', MM.expand_replies.bind(this,new_div));
                     new_div.children('.comment_footer').children('.actions').show();
                     for (r in responses[c[0].id]) {
 
