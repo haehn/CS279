@@ -5,7 +5,7 @@
 <script type='text/javascript' src='//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script>
 <script type='text/javascript' src='jquery-ui-1.10.3.custom.min.js'></script>
 <script type='text/javascript' src='comment.model.js'></script>
-<script type='text/javascript' src='user.model.js'></script>
+
 <script type='text/javascript' src='db.js'></script>
 <script type='text/javascript' src='mm.js'></script>
 <script type='text/javascript' src='mm.new.js'></script>
@@ -20,26 +20,21 @@ window.onload = function() {
   if (typeof username == 'undefined') {
     username = 'Anonymous';
   }
-  // and store it
-  var u = new User();
-  u.username = username;
-  DB.store(u, function(res) {
 
-    MM.user = (JSON.parse(res));
+  MM.user = (username);
 
-    // fix layout
-    $('#right').height(window.document.height);
-    $('#mind_margin').height(window.document.height);
+  // fix layout
+  $('#right').height(window.document.height);
+  $('#mind_margin').height(window.document.height);
 
-    // ready for new comments
-    MM.observe_interaction();
+  // ready for new comments
+  MM.observe_interaction();
 
-    // read and show old comments
-    MM.read_comments();
+  // read and show old comments
+  MM.read_comments();
 
-    MM.takeover_sidescroll();
+  MM.takeover_sidescroll();
 
-  });
 
 }
 

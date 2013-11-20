@@ -14,23 +14,28 @@ MM.observe_interaction = function() {
   }
 
 
-  $('#content')[0].onmousemove = function(e) {
+  // $('#content')[0].onmousemove = function(e) {
     
-    if (hover_trigger) {
-      // $('#new_comment').hide();
-      clearTimeout(hover_trigger);
-    }
+  //   if (hover_trigger) {
+  //     // $('#new_comment').hide();
+  //     clearTimeout(hover_trigger);
+  //   }
 
-    hover_trigger = setTimeout(function() {
-      MM.show_new_comment(e);
-      $('#new_comment_text').focus();
-    }, 5000);
+  //   hover_trigger = setTimeout(function() {
+  //     MM.show_new_comment(e);
+  //     $('#new_comment_text').focus();
+  //   }, 5000);
 
-  }
+  // }
 
   $('#content')[0].onclick = function(e) {  
       MM.show_new_comment(e);
       $('#new_comment_text').focus();
+  }
+
+  $('#mind_margin')[0].onclick = function(e) {
+    $('#new_comment').hide();
+    $('#new_comment_line').hide();
   }
 
   MM.show_new_comment = function(e) {
@@ -58,7 +63,7 @@ MM.observe_interaction = function() {
 
     o.timestamp = new Date(new Date().getTime() - 300*60000);
 
-    o.user_id = MM.user.id;
+    o.username = MM.user;
 
     DB.store(o, function(res) { 
 

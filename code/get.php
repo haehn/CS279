@@ -11,7 +11,7 @@ require_once('mapper.class.php');
 
 // the models
 require_once('comment.model.php');
-require_once('user.model.php');
+
 
 // we need a type
 if (isset($_GET['type'])) {
