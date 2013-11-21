@@ -38,40 +38,68 @@ MM.observe_interaction = function() {
     $('#new_comment_line').hide();
   }
 
-  MM.show_new_comment = function(e) {
-    $('#new_comment').css('top',$(window).scrollTop()+e.y-$('#new_comment').height()/2);
-    $('#new_comment').show();
-    $('#new_comment_line').css('top',$(window).scrollTop()+e.y);
-    $('#new_comment_line').css('left',e.x);
-    $('#new_comment_line').css('width',$(window).width()/2-e.x+20);
-    $('#new_comment_line').show();
-    new_comment_box_shown = true;
-  }
+}
+
+MM.show_new_comment = function(e) {
+  $('#new_comment').css('top',$(window).scrollTop()+e.y-$('#new_comment').height()/2);
+  $('#new_comment').show();
+  $('#new_comment_line').css('top',$(window).scrollTop()+e.y);
+  $('#new_comment_line').css('left',e.x);
+  $('#new_comment_line').css('width',$(window).width()/2-e.x+20);
+  $('#new_comment_line').show();
+  new_comment_box_shown = true;
+}
 
 
-  MM.submit_new_comment = function() {
+MM.submit_new_comment = function() {
 
 
-    var o = new Comment();
+  var o = new Comment();
 
-    o.text = $('#new_comment_text').val();
+  o.text = $('#new_comment_text').val();
 
-    o.parent_id = -1;
+  o.parent_id = -1;
 
-    o.x = parseFloat($('#new_comment_line').css('left'),10);
-    o.y = parseFloat($('#new_comment_line').css('top'),10);
+  o.x = parseFloat($('#new_comment_line').css('left'),10);
+  o.y = parseFloat($('#new_comment_line').css('top'),10);
 
-    o.timestamp = new Date(new Date().getTime() - 300*60000);
+  o.timestamp = new Date(new Date().getTime() - 300*60000);
 
-    o.username = MM.user;
+  o.username = MM.user;
 
-    DB.store(o, function(res) { 
+  DB.store(o, function(res) { 
 
-      MM.create_ui();
+    MM.create_ui();
 
-    })
+  })
 
-  }
+}
+
+
+MM.submit_response = function(id) {
+
+
+  console.log(id);
+
+  return;
+
+  var o = new Comment();
+
+  o.text = $('#new_comment_text').val();
+
+  o.parent_id = id;
+
+  o.timestamp = new Date(new Date().getTime() - 300*60000);
+
+  o.username = MM.user;
+
+  DB.store(o, function(res) { 
+
+    MM.create_ui();
+
+  })
+
+
 }
 
 MM.create_ui = function() {

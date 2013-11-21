@@ -241,7 +241,7 @@ MM.read_comments = function() {
 
       var new_div3 = $('#new_response').clone();
       new_div3.addClass('small_text');
-
+      new_div3.attr('id', 'new_response-'+c.id);
       new_div.append(new_div3);      
 
     } // popular comments
@@ -351,6 +351,7 @@ MM.read_comments = function() {
 
       var new_div3 = $('#new_response').clone();
       new_div3.addClass('small_text');
+      new_div3.attr('id', 'new_response-'+c.id);
 
       new_div.append(new_div3);
 
