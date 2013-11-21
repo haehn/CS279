@@ -447,6 +447,8 @@ MM.expand_replies = function(div) {
 
     div.children('.comment_response').hide();
 
+    div.children('.new_response').hide();
+
     div.children('.comment_footer').children('.actions').html('v');
 
   } else {
