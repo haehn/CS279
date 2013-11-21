@@ -79,7 +79,7 @@ MM.submit_new_comment = function() {
 MM.submit_response = function(id) {
 
 
-  console.log(id);
+  console.log($(id).parent().attr('id'));
 
   return;
 
