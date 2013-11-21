@@ -84,7 +84,7 @@ MM.submit_response = function(id) {
 
   var o = new Comment();
 
-  o.text = $('#new_comment_text').val();
+  o.text = $(id).parent().children('textarea').val();
 
   o.parent_id = parent_id;
 
