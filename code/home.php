@@ -86,8 +86,8 @@ window.onload = function() {
       </div>
     </div>
     <div id='new_response' class='new_response'>
-      <textarea autofocus></textarea>
-      <button onclick='MM.submit_response(this);'>Add new reply</button>
+      <textarea class='new_response_text' autofocus></textarea>
+      <button class='new_comment_submit' onclick='MM.submit_response(this);'>Add new reply</button>
     </div>
   </div>
 
