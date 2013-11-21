@@ -48,7 +48,7 @@ body {
   z-index: 6000;
 }
 
-.comment div:hover {
+.comment:hover {
   z-index: 1000000;
 }
 
