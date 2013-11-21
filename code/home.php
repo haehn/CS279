@@ -35,6 +35,7 @@ window.onload = function() {
 
   MM.takeover_sidescroll();
 
+  $('#mind_margin').css('height', $('#content').height() + 'px');
 
 }
 
