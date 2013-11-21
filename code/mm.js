@@ -202,12 +202,12 @@ MM.read_comments = function() {
       new_line.show();
 
 
+      new_div.children('.comment_footer').on('click', MM.expand_replies.bind(this,new_div));
+      new_div.children('.comment_footer').children('.actions').show();
+
+
       // check if we have responses
       if (typeof responses[parseInt(c.id,10)] != 'undefined') {
-
-
-            new_div.children('.comment_footer').on('click', MM.expand_replies.bind(this,new_div));
-            new_div.children('.comment_footer').children('.actions').show();
 
             for (r in responses[c.id]) {
 
@@ -308,12 +308,12 @@ MM.read_comments = function() {
       $('#mind_margin').append(new_line);
       new_line.show();              
 
+      new_div.children('.comment_footer').on('click', MM.expand_replies.bind(this,new_div));
+      new_div.children('.comment_footer').children('.actions').show();
 
       // check if we have responses
       if (typeof responses[parseInt(c.id,10)] != 'undefined') {
             
-            new_div.children('.comment_footer').on('click', MM.expand_replies.bind(this,new_div));
-            new_div.children('.comment_footer').children('.actions').show();
             for (r in responses[c.id]) {
 
               r = responses[c.id][r];
@@ -427,7 +427,7 @@ MM.takeover_sidescroll = function() {
 
 
 MM.expand_replies = function(div) {
-console.log('sdsd')
+
   if (div.css('z-index') == '10000') {
 
     div.css('height','150px');
