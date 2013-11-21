@@ -79,15 +79,14 @@ MM.submit_new_comment = function() {
 MM.submit_response = function(id) {
 
 
-  console.log($(id).parent().attr('id'));
+  var parent_id = parseInt($(id).parent().attr('id').split('-')[1],10);
 
-  return;
 
   var o = new Comment();
 
   o.text = $('#new_comment_text').val();
 
-  o.parent_id = id;
+  o.parent_id = parent_id;
 
   o.timestamp = new Date(new Date().getTime() - 300*60000);
 
