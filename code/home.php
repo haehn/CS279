@@ -85,6 +85,10 @@ window.onload = function() {
         <span class='actions' style='display:none' >v</span>  
       </div>
     </div>
+    <div id='new_response' class='new_response'>
+      <textarea id='response_text' autofocus></textarea>
+      <button id='response_submit' onclick='MM.submit_response();'>Add new reply</button>
+    </div>
   </div>
 
 </div>

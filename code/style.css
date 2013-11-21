@@ -62,6 +62,16 @@ body {
   box-sizing: border-box;         /* Opera/IE 8+ */  
 }
 
+.new_response {
+  display: none;
+  background-color: #FFF5CB;
+  border-radius: 15px 20px 5px 40px; 
+  /*padding:10px; */  
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;         /* Opera/IE 8+ */    
+}
+
 #new_comment {
   /*position:absolute;
   width:200px;

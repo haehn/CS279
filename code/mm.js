@@ -238,6 +238,12 @@ MM.read_comments = function() {
 
       }
 
+
+      var new_div3 = $('#new_response').clone();
+      new_div3.addClass('small_text');
+
+      new_div.append(new_div3);      
+
     } // popular comments
 
 
@@ -343,6 +349,11 @@ MM.read_comments = function() {
 
       }
 
+      var new_div3 = $('#new_response').clone();
+      new_div3.addClass('small_text');
+
+      new_div.append(new_div3);
+
 
     } // regular comments
 
@@ -445,6 +456,8 @@ MM.expand_replies = function(div) {
     div.css('z-index','10000');
 
     div.children('.comment_response').show();
+
+    div.children('.new_response').show();
 
     div.children('.comment_footer').children('.actions').html('^');
 
