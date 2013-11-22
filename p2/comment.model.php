@@ -3,7 +3,7 @@
 require_once 'object.model.php';
 
 
-class Comment extends Object {
+class Comment2 extends Object {
 
   public $text = '';
 

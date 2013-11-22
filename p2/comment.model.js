@@ -1,6 +1,6 @@
 Comment = function() {
 
-  this._classname = 'comment';
+  this._classname = 'comment2';
   
   this.parent_id = 0;
 

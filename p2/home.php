@@ -23,19 +23,11 @@ window.onload = function() {
 
   MM.user = (username);
 
-  // fix layout
-  $('#right').height(window.document.height);
-  $('#mind_margin').height(window.document.height);
-
   // ready for new comments
-  MM.observe_interaction();
+  //MM.observe_interaction();
 
   // read and show old comments
   MM.read_comments();
-
-  MM.takeover_sidescroll();
-
-  $('#mind_margin').css('height', $('#content').height() + 200 + 'px');
 
 }
 
@@ -44,23 +36,28 @@ window.onload = function() {
 
 </head>
 <body>
+<div id='page'>
+  <div id='left' style='float:left;width:50%;'>
+    <div id='content'>
+    <?php
 
-<div id='left' style='float:left;width:50%;height:100%;'>
-  <div id='content'>
-  <?php
+      include("article1.txt");
 
-    include("article1.txt");
+    ?>
+    </div>
+  </div>
 
-  ?>
+  <div id='bottom' style='width:50%;'>
+
+  <!-- NEW COMMENT -->
+  <div id='new_comment' style='float:left;height:200px'>
+    <textarea id='new_comment_text' autofocus></textarea>
+    <button id='new_comment_submit' onclick='MM.submit_new_comment();'>Add new comment</button>
+  </div> 
+
   </div>
 </div>
 
-<div id='right' style='float:left;width:50%;height:100%;overflow:hidden'>
-
-  <div id='mind_margin'>
-
-    <div id='hot'></div>
-    <div id='cold'></div>
 
     <!-- COMMENT TEMPLATE -->
     <div id='existing_comment' class='comment'>
@@ -96,15 +93,6 @@ window.onload = function() {
 
 
 
-<!-- NEW COMMENT -->
-<div id='new_comment'>
-  <textarea id='new_comment_text' autofocus></textarea>
-  <button id='new_comment_submit' onclick='MM.submit_new_comment();'>Add new comment</button>
-</div>  
-<div id='new_comment_line' class='comment_line'></div>
 
-   <div class="scroll-bar-wrap ui-widget-content ui-corner-bottom" style='width:45%'>
-      <div class="scroll-bar" style="width: 47%;position: fixed;left: 52%;bottom: 1%;z-index: 100000;"></div>
-    </div>
 
 </body>

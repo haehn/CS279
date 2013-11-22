@@ -78,40 +78,40 @@ MM.read_comments = function() {
 
     }
 
-    // order popular comments by y
+    // // order popular comments by y
     popular_comments.sort(function(a,b) {
 
-      return a.y - b.y;
+      return b.id - a.id;
 
     });
 
-    popular_comments.sort(function(a,b) {
+    // popular_comments.sort(function(a,b) {
 
 
-      // prefer newer comments
-      var time_difference = new Date(a.timestamp) - new Date(b.timestamp);
+    //   // prefer newer comments
+    //   var time_difference = new Date(a.timestamp) - new Date(b.timestamp);
 
-      var c_height = $('#existing_comment').height();
-      var current_y = parseInt(a.y,10);
-      var previous_y = parseInt(b.y,10);
-      var overlap = current_y < ( previous_y + c_height/2 + 10);
+    //   var c_height = $('#existing_comment').height();
+    //   var current_y = parseInt(a.y,10);
+    //   var previous_y = parseInt(b.y,10);
+    //   var overlap = current_y < ( previous_y + c_height/2 + 10);
 
-      // console.log('o',overlap, time_difference);
+    //   // console.log('o',overlap, time_difference);
 
-      if (time_difference < 0 && overlap) {
-        // b is newer and there is an overlap
+    //   if (time_difference < 0 && overlap) {
+    //     // b is newer and there is an overlap
 
-        // then put b in front of a
-        // console.log('UES')
-        return b.y - a.y;
+    //     // then put b in front of a
+    //     // console.log('UES')
+    //     return b.y - a.y;
 
-      } else {
+    //   } else {
 
-        return a.y - b.y;
+    //     return a.y - b.y;
 
-      }
+    //   }
 
-    });
+    // });
 
 
     copy_popular_comments = popular_comments.slice();
@@ -134,42 +134,42 @@ MM.read_comments = function() {
 
       // check if there is an overlap
       // if (c.y <= c2[0].y-$('#existing_comment').height()/2 && c.y <= c2[0].y+$('#existing_comment').height()/2) {
-      if (x>0) {
-        var c_height = $('#existing_comment').height();
-        var current_y = parseInt(popular_comments[x].y,10);
-        var previous_y = parseInt(popular_comments[x-1].y,10);
+      // if (x>0) {
+      //   var c_height = $('#existing_comment').height();
+      //   var current_y = parseInt(popular_comments[x].y,10);
+      //   var previous_y = parseInt(popular_comments[x-1].y,10);
 
-        //console.log('checking',popular_comments[x][0].id,copy_popular_comments[x-1][0].id)
+      //   //console.log('checking',popular_comments[x][0].id,copy_popular_comments[x-1][0].id)
 
-        // check if we have the same, then dont do anything
-        if (popular_comments[x].id != popular_comments[x-1].id) {
+      //   // check if we have the same, then dont do anything
+      //   if (popular_comments[x].id != popular_comments[x-1].id) {
 
-          // console.log('not the same');
+      //     // console.log('not the same');
 
-          if (current_y < ( previous_y + c_height/2 + 10) ) {
-          // if (current_y - previous_y < c_height)  {                  
+      //     if (current_y < ( previous_y + c_height/2 + 10) ) {
+      //     // if (current_y - previous_y < c_height)  {                  
 
-            // yes
+      //       // yes
 
-            // move the current comment to regular_comments
-            regular_comments.push(c);
+      //       // move the current comment to regular_comments
+      //       regular_comments.push(c);
 
-            // and remove it from popular comments
-            copy_popular_comments.splice(x, 1);
+      //       // and remove it from popular comments
+      //       copy_popular_comments.splice(x, 1);
 
-            //console.log(c.y, c2[0].y);
-            // console.log('FOUND OVERLAP',current_y, previous_y)
+      //       //console.log(c.y, c2[0].y);
+      //       // console.log('FOUND OVERLAP',current_y, previous_y)
 
-            continue_again = true;
-            // skip this guy
-            continue;
+      //       continue_again = true;
+      //       // skip this guy
+      //       continue;
 
 
-          }
+      //     }
 
-        }
+      //   }
 
-      }
+      // }
 
       var new_div = $('#existing_comment').clone();
       new_div.children('.comment_head').children('.username').html(c.username);
@@ -181,13 +181,13 @@ MM.read_comments = function() {
       new_div.show();
       new_div.addClass('small_text');
       new_div.addClass('comment-del');
-      new_div.css('top',c.y-$('#existing_comment').height()/2);
+
       // new_div.css('left',c.x);
 
       new_div.children('.comment_footer').children('.upvoteimg').on('click', MM.upvote.bind(this,c));
       new_div.children('.comment_footer').children('.downvoteimg').on('click', MM.downvote.bind(this,c));
 
-      $('#hot').append(new_div);
+      $('#bottom').append(new_div);
 
       var new_line = $('#new_comment_line').clone();
       // new_line.css('top',$(window).scrollTop()+parseInt(c.y,10)+$('#existing_comment').height()/2);
@@ -247,14 +247,9 @@ MM.read_comments = function() {
     } // popular comments
 
 
-
-
-
-
-    // order regular comments by y
     regular_comments.sort(function(a,b) {
 
-      return a.y - b.y;
+      return b.id - a.id;
 
     });
 
@@ -265,25 +260,7 @@ MM.read_comments = function() {
 
       // check if there is an overlap
       // if (c.y <= c2[0].y-$('#existing_comment').height()/2 && c.y <= c2[0].y+$('#existing_comment').height()/2) {
-      if (x>0) {
-        var c_height = $('#existing_comment').height();
-        var current_y = parseInt(regular_comments[x].y,10);
-        var previous_y = parseInt(regular_comments[x-1].y,10);
 
-        if (current_y < ( previous_y + c_height/2 + 10) ) {
-        // if (current_y - previous_y < c_height)  {                  
-
-          // yes
-          left += $('#existing_comment').width() + 30; 
-          //console.log(c.y, c2[0].y);
-          console.log('FOUND OVERLAP',current_y, previous_y)
-
-          MM.max_comment_x = Math.max(MM.max_comment_x, left + $('#existing_comment').width());
-
-        } else {
-          left = 0;
-        }
-      }
 
       var new_div = $('#existing_comment').clone();
       new_div.children('.comment_head').children('.username').html(c.username);
@@ -294,7 +271,7 @@ MM.read_comments = function() {
       new_div.attr('id', 'comment-'+c.id);
       new_div.addClass('small_text');
       new_div.show();
-      new_div.css('top',c.y-$('#existing_comment').height()/2);
+
       new_div.css('margin-left', left);
       new_div.addClass('comment-del');
       // new_div.css('left',c.x);
@@ -302,17 +279,8 @@ MM.read_comments = function() {
       new_div.children('.comment_footer').children('.upvoteimg').on('click', MM.upvote.bind(this,c));
       new_div.children('.comment_footer').children('.downvoteimg').on('click', MM.downvote.bind(this,c));
 
-      $('#cold').append(new_div);
+      $('#bottom').append(new_div);
 
-      var new_line = $('#new_comment_line').clone();
-      new_line.css('top',parseInt(c.y,10));
-      // new_line.css('left',$(window).width()/2-parseFloat($('#content').css('margin'),10));
-      new_line.css('left',-parseFloat($('#content').css('margin'),10));
-      new_line.css('width',parseInt($(content).css('margin'),10)+parseInt($('#cold').css('margin-left'),10)+left+20);
-      new_line.attr('id', 'comment-line-'+c.id);
-      new_line.addClass('comment-del');
-      $('#mind_margin').append(new_line);
-      new_line.show();              
 
       new_div.children('.comment_footer').on('click', MM.expand_replies.bind(this,new_div));
       new_div.children('.comment_footer').children('.actions').show();
@@ -358,32 +326,16 @@ MM.read_comments = function() {
 
     } // regular comments
 
-    $('#cold').css('width',MM.max_comment_x+500);
-
-    MM.setup_slider();            
-
 
   }); // db
 
 }
 
-MM.setup_slider = function() {
-
-  MM.scrollbar = $( ".scroll-bar" ).slider({
-    slide: function( event, ui ) {
-
-      $('#mind_margin').scrollLeft(MM.max_comment_x/100 * ui.value);
-
-    }
-  });
-
-
-}
 
 MM.upvote = function(c) {
 
   c.upvotes = parseInt(c.upvotes,10) + 1;
-  c._classname = 'comment';
+  c._classname = 'comment2';
   delete c.metric;
 
   DB.store(c, function() {
@@ -403,7 +355,7 @@ MM.upvote = function(c) {
 MM.downvote = function(c) {
 
   c.downvotes = parseInt(c.downvotes,10) + 1;
-  c._classname = 'comment';
+  c._classname = 'comment2';
   delete c.metric;
 
   DB.store(c, function() {

@@ -21,21 +21,11 @@ body {
   float:left;
 }
 
-#mind_margin {
-  float:left;
-  width:48%;
-  overflow-x: hidden;
-  overflow-y: hidden;
-  position: absolute;
-  left: 50%;
-  padding-left:20px;
-  height: 1000px;
-
-}
-
 .comment {
   display:none;
-  position:absolute;
+  margin:30px;
+  float:left;
+  position:relative;
   border:1px solid #c77405;
   background-color: #fbcb09;
   border-radius: 15px 20px 5px 40px; 
@@ -46,10 +36,6 @@ body {
   width: 400px;
   height: 150px;
   z-index: 6000;
-}
-
-.comment:hover {
-  z-index: 1000000;
 }
 
 .comment_response {
@@ -74,79 +60,7 @@ body {
   height: 150px;
 }
 
-#new_comment {
-  /*position:absolute;
-  width:200px;
-  right:50px;
-  left:50%;
-  display:none;*/
-  left: 50%;
-  margin-left: 20px;
-  display:none;
-  position:absolute;
-  border:1px solid #dddddd;
-  background-color: #b3def9;
-  border-radius: 15px 20px 5px 40px; 
-  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
-  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
-  box-sizing: border-box;         /* Opera/IE 8+ */
-  width: 400px;
-  height: 150px;
-  z-index: 60000;
-}
 
-
-.new_response_text {
-  width:374px;
-  margin-left: 10px;
-  margin-top: 10px;
-  padding-bottom: 30;
-  border-radius: 5px;
-  border-color: inherit;
-  height: 100px;
-  background-color: inherit;
-  font-family: sans-serif;
-}
-
-#new_comment_text {
-  width:374px;
-  margin-left: 10px;
-  margin-top: 10px;
-  padding-bottom: 30;
-  border-radius: 5px;
-  border-color: inherit;
-  height: 100px;
-  background-color: inherit;
-  font-family: sans-serif;
-}
-
-.new_comment_submit {
-  margin-top: 10px;
-  float:right;
-  margin-right:10px;
-  background-color: #ddd;
-  color: #000;
-  border: none;
-  border-radius: 5px;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  cursor: pointer;
-}
-
-#hot {
-  float:left;
-  width:420px;
-  height:100%;
-  /*border-right:1px dashed gray;*/
-}
-
-#cold {
-  position:absolute;
-  margin-left:420px;
-  width:10000px;
-  height:100%;
-  overflow-x:hidden;
-}
 
 .comment_head {
   padding: 5px 10px;
@@ -194,17 +108,3 @@ body {
   -webkit-border-radius: 3px;
   cursor: pointer;
 }
-
-.comment_line {
-  color: #ddd;
-  position:absolute;
-  height:1px;
-  width:100px;
-  display:none;
-  border-top:1.5px dotted;
-}
-
-#new_comment_line {
-  color: #000;
-}
-
