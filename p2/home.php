@@ -37,7 +37,7 @@ window.onload = function() {
 </head>
 <body>
 <div id='page'>
-  <div id='left' style='float:left;width:50%;'>
+  <div id='left' style='float:left;width:95%;'>
     <div id='content'>
     <?php
 
@@ -46,16 +46,16 @@ window.onload = function() {
     ?>
     </div>
   </div>
-
-  <div id='bottom' style='width:50%;'>
+  <br>
+  <span id='bottom' style='width:95%;'>
 
   <!-- NEW COMMENT -->
-  <div id='new_comment' style='float:left;height:200px'>
+  <div id='new_comment' style='float:left;'>
     <textarea id='new_comment_text' autofocus></textarea>
-    <button id='new_comment_submit' onclick='MM.submit_new_comment();'>Add new comment</button>
+    <button id='new_comment_submit' class='new_comment_submit' onclick='MM.submit_new_comment();'>Add new comment</button>
   </div> 
 
-  </div>
+  </span>
 </div>
 
 
