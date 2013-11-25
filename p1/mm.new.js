@@ -47,6 +47,7 @@ MM.show_new_comment = function(e) {
   $('#new_comment_line').css('left',e.x);
   $('#new_comment_line').css('width',$(window).width()/2-e.x+20);
   $('#new_comment_line').show();
+  $('#info').hide();
   new_comment_box_shown = true;
 }
 

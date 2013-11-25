@@ -37,6 +37,9 @@ window.onload = function() {
 
   $('#mind_margin').css('height', $('#content').height() + 200 + 'px');
 
+  // make info hide under comments
+  $('#info').css('z-index', 5000000);
+  setTimeout($('#info').css('z-index', 500),4000);
 }
 
 
@@ -59,7 +62,12 @@ window.onload = function() {
 
   <div id='mind_margin'>
 
-    <div id='hot'></div>
+    <div id='hot'>
+      <div id='info'>
+        <div id='info-title'><span id='info-firsthalf'>Mind</span><span id='info-secondhalf'>Margin</span></div>
+        <div id='info-desc'>click the text to comment</div>
+    </div>
+    </div>
     <div id='cold'></div>
 
     <!-- COMMENT TEMPLATE -->
