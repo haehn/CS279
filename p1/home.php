@@ -99,7 +99,7 @@ window.onload = function() {
 <!-- NEW COMMENT -->
 <div id='new_comment'>
   <textarea id='new_comment_text' autofocus></textarea>
-  <button id='new_comment_submit' onclick='MM.submit_new_comment();'>Add new comment</button>
+  <button id='new_comment_submit' class='new_comment_submit' onclick='MM.submit_new_comment();'>Add new comment</button>
 </div>  
 <div id='new_comment_line' class='comment_line'></div>
 
