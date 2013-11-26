@@ -5,11 +5,11 @@
 <script type='text/javascript' src='//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script>
 <script type='text/javascript' src='jquery-ui-1.10.3.custom.min.js'></script>
 
-  <script>
-  $(function() {
-    $( "#your_stance" ).slider();
-  });
-  </script>
+
+<script type='text/javascript' src='db.js'></script>
+<script type='text/javascript' src='index.js'></script>
+<script type='text/javascript' src='user.model.js'></script>
+
 
 <script type='text/javascript'>
 
@@ -46,6 +46,12 @@ window.onload = function() {
     $('#home').hide();
     $('#questionnaire').show();    
   }
+
+
+ 
+     $( "#your_stance" ).slider();
+   
+
 }
 
 function init_experiment() {
@@ -55,12 +61,12 @@ function init_experiment() {
 
   // redirect to p1
   if (curr_prototype == 'horizontal') {
-      window.location.replace("welcome");
+      window.location.replace("welcome?userid="+USER_ID +"&username="+NICKNAME);
   }
 
   // redirect to p2
   if (curr_prototype == 'vertical') {
-      window.location.replace("start");
+      window.location.replace("start?userid="+USER_ID +"&username="+NICKNAME);
   }
 
 }
@@ -134,9 +140,54 @@ function shuffle(array) {
 </div>
 </div>
 <!-- button from CONSENT FORM to INSTRUCTIONS -->
-<button class="next-btn" onclick="$('#consent').hide();$('#instructions').show();">I agree</button>
+<button class="next-btn" onclick="$('#consent').hide();$('#demographics').show();">I agree</button>
 </br></br>
 <div id="bottom">
+</div>
+</div>
+
+<!-- DEMOGRAPHICS -->
+<div id='demographics' style='display:none'>
+<div style="margin-left:25%;margin-right:25%;">
+<h1 class="title">Some information</h1>
+<div class="content" style="text-align:left;">
+<ul>Before we start, please answer the following questions.</ul>
+
+<b>How old are you?</b></br></br>
+&nbsp;&nbsp;&nbsp;
+<input type="radio" name="age" value="eighteen">18-25 &nbsp;&nbsp;&nbsp;
+<input type="radio" name="age" value="twentysix">26-35 &nbsp;&nbsp;&nbsp;
+<input type="radio" name="age" value="thirtysix">36-45 &nbsp;&nbsp;&nbsp;
+<input type="radio" name="age" value="old">45+
+
+<br><br><b>Your gender?</b></br></br>
+&nbsp;&nbsp;&nbsp;
+<input type="radio" name="gender" value="male">male &nbsp;&nbsp;&nbsp;
+<input type="radio" name="gender" value="female">female &nbsp;&nbsp;&nbsp;
+
+
+<br><br><b>Your study concentration?</b></br></br>
+&nbsp;&nbsp;&nbsp;
+<input type="radio" name="concentration" value="arts">Arts + Humanities &nbsp;&nbsp;&nbsp;
+<input type="radio" name="concentration" value="science">Science &nbsp;&nbsp;&nbsp;
+<input type="radio" name="concentration" value="social">Social Science &nbsp;&nbsp;&nbsp;
+<input type="radio" name="concentration" value="seas">School of Engineering and Applied Sciences &nbsp;&nbsp;&nbsp;
+
+<br><br><b>Are you left or right handed?</b></br></br>
+&nbsp;&nbsp;&nbsp;
+<input type="radio" name="handed" value="left">left handed&nbsp;&nbsp;&nbsp;
+<input type="radio" name="handed" value="right">right handed&nbsp;&nbsp;&nbsp;
+
+<br><br><b>How often do you read news articles?</b></br></br>
+&nbsp;&nbsp;&nbsp;
+<input type="radio" name="reading" value="daily">daily &nbsp;&nbsp;&nbsp;
+<input type="radio" name="reading" value="weekly">weekly &nbsp;&nbsp;&nbsp;
+<input type="radio" name="reading" value="monthly">monthly &nbsp;&nbsp;&nbsp;
+<input type="radio" name="reading" value="almostnever">almost never
+
+
+</div>
+<button class="next-btn" onclick="submit_demographics();">Let's go!</button>
 </div>
 </div>
 
@@ -145,19 +196,24 @@ function shuffle(array) {
 <div style="margin-left:25%;margin-right:25%;">
 <h1 class="title">Instructions</h1>
 <div class="content" style="text-align:left;">
-<ul>This test will investigate where you stand on the currently debated issue with TFA. Your task is to <b>read</b> the article and to <b>interact</b> with it as you see fit.</ul>
+<ul>This test will investigate where you stand in THIS ISSUE. You will be shown a controversial article. Your task is to <b>read</b> the article and to <b>interact</b> with it as you see fit.</ul>
 <ul>A 10 minute timer will be put in place. If you finish reading after 2 minutes, you can go to the opinion section by clicking the 'Finish Reading' button. </ul>
 <ul>The opinion section will gauge where you stand on this issue.</ul>
 <ul>Your opinion on the spectrum will be shown at the end, as well as how many others thought the same way you did. </ul>
+<ul><b>Please feel free to add comments to express your opinion.</b></ul>
+<ul>You can comment as <b>anonymous</b> or using a custom pseudonym:</ul>
 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="nickname" value="custom">Username/Pseudonym: <input id='nickname' type='text' class='points'> &nbsp;&nbsp;&nbsp;
+<input type="radio" name="nickname" value="anonymous">anonymous &nbsp;&nbsp;&nbsp;
 </div>
 </div>
 <!-- button from INSTRUCTIONS to EXPERIMENT -->
-<button class="next-btn" onclick="init_experiment();">Start</button>
+<button class="next-btn" onclick="submit_instructions();">Start</button>
 </br></br>
 </div>
 <div id="bottom" style="display:none;">
 </div>
+
 
 <!-- QUESTIONNAIRE  -->
 <div id="questionnaire" style="display:none;">
