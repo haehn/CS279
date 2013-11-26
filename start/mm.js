@@ -272,7 +272,7 @@ MM.read_comments = function() {
       new_div.addClass('small_text');
       new_div.show();
 
-      new_div.css('margin-left', left);
+      // new_div.css('margin-left', left);
       new_div.addClass('comment-del');
       // new_div.css('left',c.x);
 
