@@ -1,0 +1,108 @@
+html,body { height: 100%; margin: 0px; padding: 0px;}
+
+
+.small_text {
+  
+  font-size: 10pt;
+  font-family: sans-serif;
+
+}
+
+body {
+  font-family: sans-serif;  
+  text-align: center;
+  margin-top: 50px;
+}
+
+.content {
+  border:1px solid black;
+  margin-left:20px;
+  margin-top:20px;
+  margin-bottom:20px;
+  margin-right:20px;
+  padding:10px;
+}
+
+.next-btn {
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #0fbefd), color-stop(1, #0fbefd));
+    background:-moz-linear-gradient(top, #0fbefd 5%, #0fbefd 100%);
+    background:-webkit-linear-gradient(top, #0fbefd 5%, #0fbefd 100%);
+    background:-o-linear-gradient(top, #0fbefd 5%, #0fbefd 100%);
+    background:-ms-linear-gradient(top, #0fbefd 5%, #0fbefd 100%);
+    background:linear-gradient(to bottom, #0fbefd 5%, #0fbefd 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#0fbefd', endColorstr='#0fbefd',GradientType=0);
+    
+    background-color:#0fbefd;
+    
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    border-radius:10px;
+    
+    display:inline-block;
+    color:#ffffff;
+    font-size:18px;
+    font-weight:bold;
+    padding:13px 32px;
+    text-decoration:none;
+
+    border: none;
+
+    cursor: pointer;
+}
+
+.next-btn:hover {
+    
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #0fbefd), color-stop(1, #0fbefd));
+    background:-moz-linear-gradient(top, #0fbefd 5%, #0fbefd 100%);
+    background:-webkit-linear-gradient(top, #0fbefd 5%, #0fbefd 100%);
+    background:-o-linear-gradient(top, #0fbefd 5%, #0fbefd 100%);
+    background:-ms-linear-gradient(top, #0fbefd 5%, #0fbefd 100%);
+    background:linear-gradient(to bottom, #0fbefd 5%, #0fbefd 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#0fbefd', endColorstr='#0fbefd',GradientType=0);
+    
+    background-color:#0fbefd;
+}
+.next-btn:active {
+    position:relative;
+}
+
+/* textbox in questionnaire */
+#comments
+{
+    border:2px solid #456879;
+    border-radius:10px;
+    height: 200px;
+    width: 50%;
+    font-size: 12pt;
+    font-family: Times;
+    padding: 10px;
+}
+
+/* instructions box */
+.box-instr
+{ 
+    border: 5px solid #088; 
+    width: 200px;
+    height: 600px;
+    font-size: 3em;
+    float: left;
+    /*margin-left: 10%;*/
+
+}
+
+/* interface pic box */
+.box-pic
+{ 
+    border: 5px solid #088; 
+    width: 800px;
+    height: 600px;
+    font-size: 3em;
+    float: left;
+}
+
+.title
+{
+    color: #0fbefd;
+}
+
+
