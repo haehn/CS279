@@ -193,10 +193,10 @@ function shuffle(array) {
 <ul>The opinion section will gauge where you stand on this issue.</ul>
 <ul>Your opinion on the spectrum will be shown at the end, as well as how many others thought the same way you did. </ul>
 <ul><b>Please feel free to add comments to express your opinion.</b></ul>
-<ul>You can comment as <b>anonymous</b> or using a custom nickname:</ul>
+<ul>You can comment as <b>anonymous</b> or using a custom pseudonym:</ul>
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="nickname" value="anonymous">anonymous &nbsp;&nbsp;&nbsp;
-<input type="radio" name="nickname" value="custom">Nickname: <input id='nickname' type='text'> &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="nickname" value="custom">Username/Pseudonym: <input id='nickname' type='text' class='points'> &nbsp;&nbsp;&nbsp;
+<input type="radio" name="nickname" value="anonymous">anonymous &nbsp;&nbsp;&nbsp;
 </div>
 </div>
 <!-- button from INSTRUCTIONS to EXPERIMENT -->
