@@ -419,3 +419,14 @@ MM.expand_replies = function(div) {
   }
 
 }
+
+
+MM.done = function() {
+
+  if (parseFloat($('.finish_btn').css('opacity'),10) < 1) {
+    return;
+  }
+
+  //console.log('test');
+  window.location.replace("../index.html?x");
+}

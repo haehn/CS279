@@ -10,6 +10,7 @@
 <script type='text/javascript' src='mm.js'></script>
 <script type='text/javascript' src='mm.new.js'></script>
 <script type='text/javascript' src='util.js'></script>
+<script type='text/javascript' src='countdown.js'></script>
 <script type='text/javascript'>
 
 window.onload = function() {
@@ -29,6 +30,12 @@ window.onload = function() {
   // read and show old comments
   MM.read_comments();
 
+  setTimeout(function() {
+
+    $('.finish_btn').addClass('finish_btn_active');
+
+  }, 2*60000);  
+
 }
 
 
@@ -36,6 +43,12 @@ window.onload = function() {
 
 </head>
 <body>
+
+
+<div id='timer'>
+  <script type='text/javascript'>var myCountdown1 = new Countdown({width:100, height:40, padding:0.6,time:10*60, rangeHi:"minute",onComplete  : MM.done});</script> <button class='finish_btn' onclick='MM.done();'>Finish reading > </button>
+</div>
+
 <div id='page'>
   <div id='left' style='float:left;width:95%;'>
     <div id='content'>
