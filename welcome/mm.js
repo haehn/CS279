@@ -181,7 +181,7 @@ MM.read_comments = function() {
       new_div.show();
       new_div.addClass('small_text');
       new_div.addClass('comment-del');
-      new_div.css('top',c.y-$('#existing_comment').height()/2);
+      new_div.css('top',c.y-$('#existing_comment').height()/2 - $('#timer').height());
       // new_div.css('left',c.x);
 
       new_div.children('.comment_footer').children('.upvoteimg').on('click', MM.upvote.bind(this,c));
@@ -191,7 +191,7 @@ MM.read_comments = function() {
 
       var new_line = $('#new_comment_line').clone();
       // new_line.css('top',$(window).scrollTop()+parseInt(c.y,10)+$('#existing_comment').height()/2);
-      new_line.css('top',parseInt(c.y,10));
+      new_line.css('top',parseInt(c.y,10) - $('#timer').height());
       // new_line.css('left',$(window).width()/2-parseFloat($('#content').css('margin'),10));
       new_line.css('left',0);
       new_line.css('width',parseInt($(content).css('margin'),10)+20);
@@ -294,7 +294,7 @@ MM.read_comments = function() {
       new_div.attr('id', 'comment-'+c.id);
       new_div.addClass('small_text');
       new_div.show();
-      new_div.css('top',c.y-$('#existing_comment').height()/2);
+      new_div.css('top',c.y-$('#existing_comment').height()/2 - $('#timer').height());
       new_div.css('margin-left', left);
       new_div.addClass('comment-del');
       // new_div.css('left',c.x);
@@ -305,7 +305,7 @@ MM.read_comments = function() {
       $('#cold').append(new_div);
 
       var new_line = $('#new_comment_line').clone();
-      new_line.css('top',parseInt(c.y,10));
+      new_line.css('top',parseInt(c.y,10) - $('#timer').height());
       // new_line.css('left',$(window).width()/2-parseFloat($('#content').css('margin'),10));
       new_line.css('left',-parseFloat($('#content').css('margin'),10));
       new_line.css('width',parseInt($(content).css('margin'),10)+parseInt($('#cold').css('margin-left'),10)+left+20);
