@@ -36,6 +36,9 @@ window.onload = function() {
 
   }, 2*60000);  
 
+
+  $('#share').on('click', MM.share);
+
 }
 
 
@@ -54,7 +57,7 @@ window.onload = function() {
     <div id='content'>
 
 
-    <div id='share' style='position:absolute;right:1%;'><button id='share_btn'>Share the original article</button></div>
+    <div id='share' style='position:absolute;right:6%;'><button id='share_btn'>Share the original article</button></div>
 
 
     <?php
