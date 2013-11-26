@@ -7,6 +7,37 @@
 
 <script type='text/javascript'>
 
+window.onload = function() {
+
+// from http://stackoverflow.com/a/7826782/1183453
+  var args = document.location.search.substring(1).split('&');
+  argsParsed = {};
+  for (var i=0; i < args.length; i++)
+  {
+      arg = unescape(args[i]);
+
+      if (arg.length == 0) {
+        continue;
+      }
+
+      if (arg.indexOf('=') == -1)
+      {
+          argsParsed[arg.replace(new RegExp('/$'),'').trim()] = true;
+      }
+      else
+      {
+          kvp = arg.split('=');
+          argsParsed[kvp[0].trim()] = kvp[1].replace(new RegExp('/$'),'').trim();
+      }
+  }
+
+  if ('q' in argsParsed) {
+    console.log('tesfdgsdg')
+    $('#home').hide();
+    $('#questionnaire').show();
+  }
+}
+
 function init_experiment() {
   // randomize p1 (horizontal) and p2 (vertical) probability
   var prototypes = shuffle(['horizontal','vertical']);
@@ -118,7 +149,7 @@ function shuffle(array) {
 <div id="bottom" style="display:none;">
 </div>
 
-<!-- QUESTIONNAIRE 
+<!-- QUESTIONNAIRE  -->
 <div id="questionnaire" style="display:none;">
 <div style="margin-left:25%;margin-right:25%;">
 <h1 class="title">A bit of inquiry...</h1>
@@ -158,7 +189,7 @@ function shuffle(array) {
 </div>
 </div>
 
-<!-- FINISH end page
+<!-- FINISH end page -->
 <div id="finish" style="display:none;">
     <h1>Thank you for participating in our study! We really appreciate your help.</h1>
 
@@ -175,6 +206,6 @@ function shuffle(array) {
     }
     </script>
     <a href="javascript:fbShare('http://tinyurl.com/focusmusic', 'Test your concentration!', 'How fast can you click?', 'http://i1123.photobucket.com/albums/l543/hercampusphoto/HCIllinois/Illinois%203/MusicalNotesHead.jpg', 520, 350)"><img src='gfx/fbsharebtn.png'></a>
-</div> -->
+</div>
 
 </body>

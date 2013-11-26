@@ -467,3 +467,8 @@ MM.expand_replies = function(div) {
   }
 
 }
+
+MM.done = function() {
+  //console.log('test');
+  window.location.replace("../index.html?q");
+}

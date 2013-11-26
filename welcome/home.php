@@ -10,6 +10,7 @@
 <script type='text/javascript' src='mm.js'></script>
 <script type='text/javascript' src='mm.new.js'></script>
 <script type='text/javascript' src='util.js'></script>
+<script type='text/javascript' src='countdown.js'></script>
 <script type='text/javascript'>
 
 window.onload = function() {
@@ -40,6 +41,14 @@ window.onload = function() {
   // make info hide under comments
   $('#info').css('z-index', 5000000);
   setTimeout($('#info').css('z-index', 500),4000);
+
+  setTimeout(function() {
+
+    $('.finish_btn').addClass('finish_btn_active');
+
+  }, 2*60000);
+
+
 }
 
 
@@ -48,7 +57,12 @@ window.onload = function() {
 </head>
 <body>
 
+<div id='timer'>
+  <script type='text/javascript'>var myCountdown1 = new Countdown({width:100, height:40, padding:0.6,time:10*60, rangeHi:"minute",onComplete  : MM.done});</script> <button class='finish_btn' onclick='MM.done();'>Finish reading > </button>
+</div>
+
 <div id='left' style='float:left;width:50%;height:100%;'>
+
   <div id='content'>
   <?php
 
@@ -60,13 +74,14 @@ window.onload = function() {
 
 <div id='right' style='float:left;width:50%;height:100%;overflow:hidden'>
 
+
   <div id='mind_margin'>
 
     <div id='hot'>
       <div id='info'>
         <div id='info-title'><span id='info-firsthalf'>Mind</span><span id='info-secondhalf'>Margin</span></div>
         <div id='info-desc'>click the text to comment</div>
-    </div>
+      </div>
     </div>
     <div id='cold'></div>
 
