@@ -168,36 +168,36 @@ function shuffle(array) {
 <b>What is the article's <u>general stance</u> on TFA?</b></br></br>
 <form id='comprehension_1'>
 &nbsp;&nbsp;&nbsp;
-<input type="radio" name="procon" value="pro"> For TFA
+<input type="radio" name="general_stance" value="pro"> For TFA
 <br><br>&nbsp;&nbsp;&nbsp;
-<input type="radio" name="procon" value="con"> Against TFA 
+<input type="radio" name="general_stance" value="con"> Against TFA 
 </form>
 </br></br>
 
 <b>Name <u>two points</u> the article makes to support its stance:</b>
 <form id='comprehension_2'>
-<br><input class='points' type='text' name='point_1' class='points' value=' One Point' onfocus="this.value='';this.style.color='black';">
-<br><br><input class='points' type='text' name='point_2' value=' Another Point' onfocus="this.value='';this.style.color='black';">
+<br><input class='points' type='text' name='support_point_1' class='points' value=' One Point' onfocus="this.value='';this.style.color='black';">
+<br><br><input class='points' type='text' name='support_point_2' value=' Another Point' onfocus="this.value='';this.style.color='black';">
 </form>
 </br></br>
 
 <b>What is your <u>reaction to the article</u>?</b></br></br>
 <form id='opinion_1'>
 &nbsp;&nbsp;&nbsp;
-<input type="radio" name="like" value="like_agree"> Like, and agree 
+<input type="radio" name="reaction" value="like_agree"> Like, and agree 
 <br><br>&nbsp;&nbsp;&nbsp;
-<input type="radio" name="like" value="like_disagree"> Like, but disagree 
+<input type="radio" name="reaction" value="like_disagree"> Like, but disagree 
 <br><br>&nbsp;&nbsp;&nbsp;
-<input type="radio" name="like" value="dislike_disagree"> Dislike, and disagree 
+<input type="radio" name="reaction" value="dislike_disagree"> Dislike, and disagree 
 <br><br>&nbsp;&nbsp;&nbsp;
-<input type="radio" name="like" value="dislike_agree"> Dislike, but agree
+<input type="radio" name="reaction" value="dislike_agree"> Dislike, but agree
 </form>
 </br></br>
 
 <b>What is <u>your stance</u> on the issue?</b></br></br>
 <form id='opinion_2'>
 &nbsp;&nbsp;&nbsp;
-<div style="margin-left:20px;margin-right:20px" id="slider_opinion"></div></br>
+<div style="margin-left:20px;margin-right:20px" name="your_stance" id="your_stance"></div></br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1
  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2
  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3
@@ -210,18 +210,18 @@ function shuffle(array) {
 </br></br></br></br>
 
 <b>Did you read or skim any of the <u>comments</u>?</b></br></br>
-<form id='comments_1'>
+<form id='comment_1'>
 &nbsp;&nbsp;&nbsp;
-<input type="radio" name="comment_1" value="comment_read"> Yes, I did
+<input type="radio" name="skim_comments" value="comment_read"> Yes, I did
 <br><br>&nbsp;&nbsp;&nbsp;
-<input type="radio" name="comment_1" value="comment_notread"> No, I did not
+<input type="radio" name="skim_comments" value="comment_notread"> No, I did not
 </form>
 </br></br>
 
 <b>What did you take from the comments?</b></br></br>
 <div style="color:grey;font-size:small"><i>...interesting? useful? distracting?</i></div></br>
-<form id='comments_2'>
-<textarea name="comments_2" class="comments" id="comments_2" cols="25" rows="5">
+<form id='comment_2'>
+<textarea name="take_from_comments" class="comments" id="comment_2" cols="25" rows="5">
 </textarea><br><br>
 </form>
 </br></br>
@@ -229,8 +229,8 @@ function shuffle(array) {
 <b>What did you think of the comments?</b></br></br>
 <div style="color:grey;font-size:small"><i>MadLib style!</i></div>
 <form id='comprehension_2'>
-<br><input class='points' type='text' name='point_1' class='points' value=' One Adjective' onfocus="this.value='';this.style.color='black';">
-<br><br><input class='points' type='text' name='point_2' value=' Another Adjective' onfocus="this.value='';this.style.color='black';">
+<br><input class='points' type='text' name='one_adjective' class='points' value=' One Adjective' onfocus="this.value='';this.style.color='black';">
+<br><br><input class='points' type='text' name='another_adjective' value=' Another Adjective' onfocus="this.value='';this.style.color='black';">
 </form>
 </br></br>
 
