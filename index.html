@@ -5,6 +5,12 @@
 <script type='text/javascript' src='//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script>
 <script type='text/javascript' src='jquery-ui-1.10.3.custom.min.js'></script>
 
+  <script>
+  $(function() {
+    $( "#slider_opinion" ).slider();
+  });
+  </script>
+
 <script type='text/javascript'>
 
 window.onload = function() {
@@ -139,7 +145,7 @@ function shuffle(array) {
 <div style="margin-left:25%;margin-right:25%;">
 <h1 class="title">Instructions</h1>
 <div class="content" style="text-align:left;">
-<ul>This test will investigate where you stand in THIS ISSUE. You will be shown a controversial article. Your task is to <b>read</b> the article and to <b>interact</b> with it as you see fit.</ul>
+<ul>This test will investigate where you stand on the currently debated issue with TFA. Your task is to <b>read</b> the article and to <b>interact</b> with it as you see fit.</ul>
 <ul>A 10 minute timer will be put in place. If you finish reading after 2 minutes, you can go to the opinion section by clicking the 'Finish Reading' button. </ul>
 <ul>The opinion section will gauge where you stand on this issue.</ul>
 <ul>Your opinion on the spectrum will be shown at the end, as well as how many others thought the same way you did. </ul>
@@ -158,38 +164,109 @@ function shuffle(array) {
 <div style="margin-left:25%;margin-right:25%;">
 <h1 class="title">A bit of inquiry...</h1>
 <div class="content" style="text-align:left;">
-<div style="font-size:20px;">Your answers will tell us more. Thanks!</div>
-<b>Which interface did you prefer?</b></br></br>
-<form id='interface_form'>
+
+<b>What is the article's <u>general stance</u> on TFA?</b></br></br>
+<form id='comprehension_1'>
 &nbsp;&nbsp;&nbsp;
-<input type="radio" name="preference" value="ribbons" id='ribradio'><img src='gfx/ribbon_home.png' width=200 onclick='$("#ribradio").click()'> &nbsp;&nbsp;&nbsp;
-<input type="radio" name="preference" value="commandmaps" id='cmdmapradio'><img src='gfx/commandmap.png' width=200 onclick='$("#cmdmapradio").click()'>
+<input type="radio" name="procon" value="pro"> For TFA
+<br><br>&nbsp;&nbsp;&nbsp;
+<input type="radio" name="procon" value="con"> Against TFA 
 </form>
 </br></br>
-<b>What device are you using on your computer?</b></br></br>
-<form id='device_form'>
+
+<b>Name <u>two points</u> the article makes to support its stance:</b>
+<form id='comprehension_2'>
+<br><input class='points' type='text' name='point_1' class='points' value=' One Point' onfocus="this.value='';this.style.color='black';">
+<br><br><input class='points' type='text' name='point_2' value=' Another Point' onfocus="this.value='';this.style.color='black';">
+</form>
+</br></br>
+
+<b>What is your <u>reaction to the article</u>?</b></br></br>
+<form id='opinion_1'>
 &nbsp;&nbsp;&nbsp;
-<input type="radio" name="device" value="mouse">Mouse &nbsp;&nbsp;&nbsp;
-<input type="radio" name="device" value="trackpad">Trackpad &nbsp;&nbsp;&nbsp;
-<input type="radio" name="device" value="trackball">Trackball &nbsp;&nbsp;&nbsp;
-<input type="radio" name="device" value="other">Other
+<input type="radio" name="like" value="like_agree"> Like, and agree 
+<br><br>&nbsp;&nbsp;&nbsp;
+<input type="radio" name="like" value="like_disagree"> Like, but disagree 
+<br><br>&nbsp;&nbsp;&nbsp;
+<input type="radio" name="like" value="dislike_disagree"> Dislike, and disagree 
+<br><br>&nbsp;&nbsp;&nbsp;
+<input type="radio" name="like" value="dislike_agree"> Dislike, but agree
 </form>
 </br></br>
-<b>If you are using Mechanical Turk, please specify your MTurk ID!</b>
-<form id='mturk'>
-<input type='text' name='mturk'>
-<br>
-<b>..and enter this code in MTurk:</b> <span id='c'>32f332ds</span>
+
+<b>What is <u>your stance</u> on the issue?</b></br></br>
+<form id='opinion_2'>
+&nbsp;&nbsp;&nbsp;
+<div style="margin-left:20px;margin-right:20px" id="slider_opinion"></div></br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5 
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 6 
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 7 
+<div style="float:left;margin-left:20px"><br> <b>For</b> TFA</div><div style="float:right;margin-right:20px"> </br> <b>Against</b> TFA</div>
+</form>
+</br></br></br></br>
+
+<b>Did you read or skim any of the <u>comments</u>?</b></br></br>
+<form id='comments_1'>
+&nbsp;&nbsp;&nbsp;
+<input type="radio" name="comment_1" value="comment_read"> Yes, I did
+<br><br>&nbsp;&nbsp;&nbsp;
+<input type="radio" name="comment_1" value="comment_notread"> No, I did not
 </form>
 </br></br>
-<b>Comments?</b>
+
+<b>What did you take from the comments?</b></br></br>
+<div style="color:grey;font-size:small"><i>...interesting? useful? distracting?</i></div></br>
+<form id='comments_2'>
+<textarea name="comments_2" class="comments" id="comments_2" cols="25" rows="5">
+</textarea><br><br>
+</form>
+</br></br>
+
+<b>What did you think of the comments?</b></br></br>
+<div style="color:grey;font-size:small"><i>MadLib style!</i></div>
+<form id='comprehension_2'>
+<br><input class='points' type='text' name='point_1' class='points' value=' One Adjective' onfocus="this.value='';this.style.color='black';">
+<br><br><input class='points' type='text' name='point_2' value=' Another Adjective' onfocus="this.value='';this.style.color='black';">
+</form>
+</br></br>
+
+<b>Did you or would you <u>share</u> the article?</b></br></br>
+<form id='share'>
+&nbsp;&nbsp;&nbsp;
+<input type="radio" name="share" value="yes_did"> Yes, I <u>did</u> share it.
+<br><br>&nbsp;&nbsp;&nbsp;
+<input type="radio" name="share" value="yes_would"> Yes, I <u>would</u> share it.
+<br><br>&nbsp;&nbsp;&nbsp;
+<input type="radio" name="share" value="no"> No, I would <b>not</b> share it.
+</form>
+</br></br>
+
+
+<b>Have you <u>read or seen</u> this article <u>before</u>?</b></br></br>
+<form id='read_before'>
+&nbsp;&nbsp;&nbsp;
+<input type="radio" name="read_before" value="read"> Yes, I have <u>read</u> it before.
+<br><br>&nbsp;&nbsp;&nbsp;
+<input type="radio" name="read_before" value="seen"> Yes, I have <u>seen</u> the headline before, but did not read it.
+<br><br>&nbsp;&nbsp;&nbsp;
+<input type="radio" name="read_before" value="no"> No, I have  <b>never seen</b> it.
+</form>
+</br></br>
+
+<b>Comments?</b></br></br>
 <div style="color:grey;font-size:small"><i>technical difficulties? thoughts in general?</i></div></br>
-<form id='comments_form'>
-<textarea name="comments" id="comments" cols="25" rows="5">
+<form id='additional_comments'>
+<textarea name="comments" class="comments" id="additional_comments" cols="25" rows="5">
 </textarea><br><br>
 </form>
 <button class="next-btn" onclick="Q.submit();" style="margin-left:5px;">Submit</button>
 </div>
+<br><br><br>
+
 </div>
 </div>
 
