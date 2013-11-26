@@ -18,6 +18,22 @@ body {
   margin-right: 70px;
 }
 
+
+#share_btn {
+  /*margin-top: 10px;*/
+  /*float:right;*/
+  /*margin-right:10px;*/
+  background-color: #ddd;
+  color: #000;
+  border: none;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  cursor: pointer;
+  opacity: 1.0;
+}
+
+
 .finish_btn {
   /*margin-top: 10px;*/
   /*float:right;*/
