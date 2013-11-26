@@ -36,6 +36,9 @@ window.onload = function() {
 
   }, 2*60000);  
 
+
+  $('#share').on('click', MM.share);
+
 }
 
 
@@ -52,6 +55,11 @@ window.onload = function() {
 <div id='page'>
   <div id='left' style='float:left;width:95%;'>
     <div id='content'>
+
+
+    <div id='share' style='position:absolute;right:6%;'><button id='share_btn'>Share the original article</button></div>
+
+
     <?php
 
       include("article1.txt");

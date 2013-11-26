@@ -430,3 +430,13 @@ MM.done = function() {
   //console.log('test');
   window.location.replace("../index.html?x");
 }
+
+
+MM.share = function(e) {
+  e.stopPropagation();
+
+  // open original article
+
+  window.open('http://www.thecrimson.com/column/the-red-line/article/2013/10/23/dont-teach-for-america/');
+
+}
