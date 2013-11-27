@@ -19,9 +19,9 @@ class User extends Object {
 
   public $general_stance = '';
 
-  public $support_point1 = '';
+  public $support_point_1 = '';
 
-  public $support_point2 = '';
+  public $support_point_2 = '';
 
   public $reaction = '';
 

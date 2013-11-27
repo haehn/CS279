@@ -16,9 +16,9 @@ User = function() {
 
   this.general_stance = '';
 
-  this.support_point1 = '';
+  this.support_point_1 = '';
 
-  this.support_point2 = '';
+  this.support_point_2 = '';
 
   this.reaction = '';
 

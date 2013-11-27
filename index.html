@@ -231,23 +231,18 @@ function shuffle(array) {
 <div class="content" style="text-align:left;">
 
 <b>What is the article's <u>general stance</u> on TFA?</b></br></br>
-<form id='comprehension_1'>
 &nbsp;&nbsp;&nbsp;
 <input type="radio" name="general_stance" value="pro"> For TFA
 <br><br>&nbsp;&nbsp;&nbsp;
 <input type="radio" name="general_stance" value="con"> Against TFA 
-</form>
 </br></br>
 
 <b>Name <u>two points</u> the article makes to support its stance:</b>
-<form id='comprehension_2'>
 <br><input class='points' type='text' name='support_point_1' class='points' value=' One Point' onfocus="this.value='';this.style.color='black';">
 <br><br><input class='points' type='text' name='support_point_2' value=' Another Point' onfocus="this.value='';this.style.color='black';">
-</form>
 </br></br>
 
 <b>What is your <u>reaction to the article</u>?</b></br></br>
-<form id='opinion_1'>
 &nbsp;&nbsp;&nbsp;
 <input type="radio" name="reaction" value="like_agree"> Like, and agree 
 <br><br>&nbsp;&nbsp;&nbsp;
@@ -256,11 +251,9 @@ function shuffle(array) {
 <input type="radio" name="reaction" value="dislike_disagree"> Dislike, and disagree 
 <br><br>&nbsp;&nbsp;&nbsp;
 <input type="radio" name="reaction" value="dislike_agree"> Dislike, but agree
-</form>
 </br></br>
 
 <b>What is <u>your stance</u> on the issue?</b></br></br>
-<form id='opinion_2'>
 &nbsp;&nbsp;&nbsp;
 <div style="margin-left:20px;margin-right:20px" name="your_stance" id="your_stance"></div></br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1
@@ -271,64 +264,51 @@ function shuffle(array) {
  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 6 
  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 7 
 <div style="float:left;margin-left:20px"><br> <b>For</b> TFA</div><div style="float:right;margin-right:20px"> </br> <b>Against</b> TFA</div>
-</form>
 </br></br></br></br>
 
 <b>Did you read or skim any of the <u>comments</u>?</b></br></br>
-<form id='comment_1'>
 &nbsp;&nbsp;&nbsp;
 <input type="radio" name="skim_comments" value="comment_read"> Yes, I did
 <br><br>&nbsp;&nbsp;&nbsp;
 <input type="radio" name="skim_comments" value="comment_notread"> No, I did not
-</form>
 </br></br>
 
 <b>What did you take from the comments?</b></br></br>
 <div style="color:grey;font-size:small"><i>...interesting? useful? distracting?</i></div></br>
-<form id='comment_2'>
-<textarea name="take_from_comments" class="comments" id="comment_2" cols="25" rows="5">
+<textarea name="take_from_comments" class="comments" id="take_from_comments" cols="25" rows="5">
 </textarea><br><br>
-</form>
 </br></br>
 
 <b>What did you think of the comments?</b></br></br>
 <div style="color:grey;font-size:small"><i>MadLib style!</i></div>
-<form id='comprehension_2'>
 <br><input class='points' type='text' name='one_adjective' class='points' value=' One Adjective' onfocus="this.value='';this.style.color='black';">
 <br><br><input class='points' type='text' name='another_adjective' value=' Another Adjective' onfocus="this.value='';this.style.color='black';">
-</form>
 </br></br>
 
 <b>Did you or would you <u>share</u> the article?</b></br></br>
-<form id='share'>
 &nbsp;&nbsp;&nbsp;
 <input type="radio" name="share" value="yes_did"> Yes, I <u>did</u> share it.
 <br><br>&nbsp;&nbsp;&nbsp;
 <input type="radio" name="share" value="yes_would"> Yes, I <u>would</u> share it.
 <br><br>&nbsp;&nbsp;&nbsp;
 <input type="radio" name="share" value="no"> No, I would <b>not</b> share it.
-</form>
 </br></br>
 
 
 <b>Have you <u>read or seen</u> this article <u>before</u>?</b></br></br>
-<form id='read_before'>
 &nbsp;&nbsp;&nbsp;
 <input type="radio" name="read_before" value="read"> Yes, I have <u>read</u> it before.
 <br><br>&nbsp;&nbsp;&nbsp;
 <input type="radio" name="read_before" value="seen"> Yes, I have <u>seen</u> the headline before, but did not read it.
 <br><br>&nbsp;&nbsp;&nbsp;
 <input type="radio" name="read_before" value="no"> No, I have  <b>never seen</b> it.
-</form>
 </br></br>
 
 <b>Comments?</b></br></br>
 <div style="color:grey;font-size:small"><i>technical difficulties? thoughts in general?</i></div></br>
-<form id='additional_comments'>
-<textarea name="comments" class="comments" id="additional_comments" cols="25" rows="5">
+<textarea name="comments" class="comments" id="comments" cols="25" rows="5">
 </textarea><br><br>
-</form>
-<button class="next-btn" onclick="Q.submit();" style="margin-left:5px;">Submit</button>
+<button class="next-btn" onclick="submit_q();" style="margin-left:5px;">Submit</button>
 </div>
 <br><br><br>
 
