@@ -116,13 +116,15 @@ function shuffle(array) {
 
 <!-- HOME -->
 <div id="home">
-<h1 class="title">Your Opinion Matters</h1>
-<h2>What are people <span style="color:#0fbefd;">thinking</span> about TFA?</h2><h2 style="color:gray;">Where does <span style="color:#0fbefd;">your opinion</span> lie on the spectrum?</h2>
+<h1 class="title">Do you (<span style="color:gray;">really</span>) think like a Harvard student?</h1>
+<h2>Learn how <u>the way you read</u> determines <br>how closely you think to <span style="color:#0fbefd;">a</span>[<span style="color:#0fbefd;">nother</span>] Harvard student.</h2><h3 style="color:gray;">Our algorithm considers both classified objective and subjective metrics</br> when computing how you read and respond to an article in an online environment.</h3>
 <!-- button from HOME to INSTRUCTIONS -->
-</br>
-<img class="homeimg" src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQ7q-diIV5gBd2EVXNu3MuM6HPqXqPjDfvtiy6cX3OoO0t9LIPm">
+<button class="next-btn" onclick="$('#home').hide();$('#consent').show();">Find Out</button></br></br>
+<img class="homeimg" style="height:200px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7K5s8OtlUhHgNkkvkn8fFOcYU6X2xoFSoY-tfkm40WBNA71EKcg">
+<img class="homeimg" style="height:200px;" src="https://scontent-b-iad.xx.fbcdn.net/hphotos-frc3/q72/s720x720/1465284_10151738747892117_185154923_n.jpg">
+<img class="homeimg" style="height:200px;" src="http://blogs.law.harvard.edu/collegeadmissionsstudentblog/files/2010/11/IMG_1587.jpg">
+<img class="homeimg" style="height:200px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkEcrOsIcuPU4Ol6aR7_MM43Exo_9SFmfyPm1uEqBIlTM4r-gQIA">
 </br></br>
-<button class="next-btn" onclick="$('#home').hide();$('#consent').show();">Find Out</button></br>
 <div id="bottom">
 </div>
 </div>
@@ -132,12 +134,12 @@ function shuffle(array) {
 <div style="margin-left:25%;margin-right:25%;">
 <h1 class="title">Statement of Informed Consent</h1>
 <div class="content" style="text-align:left;overflow-y:scroll;height:50%">
-<ul>You're about to participate in a research study. Your contribution to our research allows us to learn more about <b>how opinions differ on Teach For America</b>, or TFA.</ul>
+<ul>You're about to participate in a research study. Your contribution to our research allows us to learn more about <b>how people read and interact with articles</b>.</ul>
 <ul><i>Please read the following information carefully before proceeding.</i></ul>
 <ul><h4>Why we are doing this research</h4></ul>
-<ul>We are trying to understand how people's opinions range and how they are spread out (eg. bell curve/normal spread) surrounding TFA. We are also trying to understand how commenting systems perform and affect engagement. </ul>
+<ul>We are trying to understand how people interact differently with articles and how there are correlations among people, not necessarily in opinion, but in method. We are also trying to understand how commenting systems perform and affect engagement. </ul>
 <ul><h4>What you will have to do</h4></ul>
-<ul>You will be shown an article concerning Teach For America, taken from the Harvard Crimson. Feel free to make comments and reply to comments as you wish. There will be questions regarding basic information in the beginning and your opinion of the article afterwards. </ul>
+<ul>You will be shown an opinion article on Teach For America, written by the Harvard Crimson. Feel free to make comments and reply to comments as you wish. There will be questions regarding basic information in the beginning and ones regarding your opinion and comprehension of the article afterwards. </ul>
 <ul><h4>Potential risks</h4></ul>
 <ul>There are no risks anticipated in taking part in this study and you are free to leave at any time. </ul>
 <ul><h4>Duration</h4></ul>
@@ -160,39 +162,46 @@ function shuffle(array) {
 <div style="margin-left:25%;margin-right:25%;">
 <h1 class="title">Some information</h1>
 <div class="content" style="text-align:left;">
-<ul>Before we start, please answer the following questions.</ul>
-
+<div style="color:gray"><b>Before we start, please answer the following questions:</b></div>
+</br>
 <b>How old are you?</b></br></br>
 &nbsp;&nbsp;&nbsp;
-<input type="radio" name="age" value="eighteen">18-25 &nbsp;&nbsp;&nbsp;
-<input type="radio" name="age" value="twentysix">26-35 &nbsp;&nbsp;&nbsp;
-<input type="radio" name="age" value="thirtysix">36-45 &nbsp;&nbsp;&nbsp;
-<input type="radio" name="age" value="old">45+
+<input type="radio" name="age" value="eighteen"> 18-25 &nbsp;&nbsp;&nbsp;
+<input type="radio" name="age" value="twentysix"> 26-35 &nbsp;&nbsp;&nbsp;
+<input type="radio" name="age" value="thirtysix"> 36-45 &nbsp;&nbsp;&nbsp;
+<input type="radio" name="age" value="old"> 45+
 
 <br><br><b>Your gender?</b></br></br>
 &nbsp;&nbsp;&nbsp;
-<input type="radio" name="gender" value="male">male &nbsp;&nbsp;&nbsp;
-<input type="radio" name="gender" value="female">female &nbsp;&nbsp;&nbsp;
+<input type="radio" name="gender" value="male"> Male &nbsp;&nbsp;&nbsp;
+<input type="radio" name="gender" value="female"> Female &nbsp;&nbsp;&nbsp;
 
 
-<br><br><b>Your study concentration?</b></br></br>
+<br><br><b>What division is your field of study (concentration)?</b></br></br>
 &nbsp;&nbsp;&nbsp;
-<input type="radio" name="concentration" value="arts">Arts + Humanities &nbsp;&nbsp;&nbsp;
-<input type="radio" name="concentration" value="science">Science &nbsp;&nbsp;&nbsp;
-<input type="radio" name="concentration" value="social">Social Science &nbsp;&nbsp;&nbsp;
-<input type="radio" name="concentration" value="seas">School of Engineering and Applied Sciences &nbsp;&nbsp;&nbsp;
-
-<br><br><b>Are you left or right handed?</b></br></br>
+<input type="radio" name="concentration" value="arts"> Arts and Humanities
+<span style="color:grey;font-size:small"><i>English, Music, Foreign Languages, Film Studies</i></span></br>
 &nbsp;&nbsp;&nbsp;
-<input type="radio" name="handed" value="left">left handed&nbsp;&nbsp;&nbsp;
-<input type="radio" name="handed" value="right">right handed&nbsp;&nbsp;&nbsp;
-
-<br><br><b>How often do you read news articles?</b></br></br>
+<input type="radio" name="concentration" value="science"> Sciences 
+<span style="color:grey;font-size:small"><i>Biology, Physics, Mathematics, Statistics</i></span></br>
 &nbsp;&nbsp;&nbsp;
-<input type="radio" name="reading" value="daily">daily &nbsp;&nbsp;&nbsp;
-<input type="radio" name="reading" value="weekly">weekly &nbsp;&nbsp;&nbsp;
-<input type="radio" name="reading" value="monthly">monthly &nbsp;&nbsp;&nbsp;
-<input type="radio" name="reading" value="almostnever">almost never
+<input type="radio" name="concentration" value="social"> Social Sciences 
+<span style="color:grey;font-size:small"><i>Economics, Psychology, History, Anthropology</i></span></br>
+&nbsp;&nbsp;&nbsp;
+<input type="radio" name="concentration" value="seas"> Engineering and Applied Sciences 
+<span style="color:grey;font-size:small"><i>Applied Math, Computer Science</i></span></br>
+
+<br><br><b>Are you left- or right- handed?</b></br></br>
+&nbsp;&nbsp;&nbsp;
+<input type="radio" name="handed" value="left"> Left-handed&nbsp;&nbsp;&nbsp;
+<input type="radio" name="handed" value="right"> Right-handed&nbsp;&nbsp;&nbsp;
+
+<br><br><b>How often do you read news articles (online and print)?</b></br></br>
+&nbsp;&nbsp;&nbsp;
+<input type="radio" name="reading" value="daily"> Daily &nbsp;&nbsp;&nbsp;
+<input type="radio" name="reading" value="weekly"> Weekly &nbsp;&nbsp;&nbsp;
+<input type="radio" name="reading" value="monthly"> Monthly &nbsp;&nbsp;&nbsp;
+<input type="radio" name="reading" value="almostnever"> Almost never
 
 
 </div>
@@ -206,11 +215,11 @@ function shuffle(array) {
 <h1 class="title">Instructions</h1>
 <div class="content" style="text-align:left;">
 <ul>This test will investigate where you stand on the currently debated issue around TFA. Your task is to <b>read</b> the article and to <b>interact</b> with it as you see fit.</ul>
-<ul>A <b>10-minute</b> timer will be put in place. If you finish reading after two minutes, you can go to the opinion section by clicking the 'Finish Reading' button. </ul>
-<ul>The <b>opinion section</b> will gauge where you stand on this issue.</ul>
-<ul>At the end, you will see how many others <b>think the same way you do</b> on this issue. Since the majority of our participant pool is coming from Harvard College, you will discover how divergent or convergent your opinion is to (other) Harvard students. </ul>
+<ul>A <b>10-minute</b> timer will be put in place. If you're done with article after two minutes, you can go to the opinion section by clicking the 'Finish Reading' button. </ul>
+<ul>The <b>opinion section</b> will gauge where you stand on this issue and more subjectively how you interacted with the article.</ul>
+<ul>At the end, you will see how many Harvard students <b>think the same way you do</b> when reading and interacting with the text. </ul>
 <ul><b>Please feel free to add comments to express your opinion.</b></ul>
-<ul>You can comment as <b>anonymous</b> or using a custom pseudonym:</ul>
+<ul>You can comment using a custom pseudonym or <b>anonymously</b>:</ul>
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="nickname" value="custom">Username/Pseudonym: <input id='nickname' type='text' class='points' style='width:150px;'> &nbsp;&nbsp;&nbsp;
 <input type="radio" name="nickname" value="anonymous">anonymous &nbsp;&nbsp;&nbsp;
@@ -319,12 +328,11 @@ function shuffle(array) {
 <div id="finish" class="content" style="display:none;">
     <h1>Thank you for participating in our study.</br><div style="color:gray;">We really appreciate your help!</div></h1>
 
-    <h2 class="title">37% of people agree with your stance. </h2></br><h2 id='ranking'>The <u>majority</u> of Harvard students actually think the same. </h2></br>
-    
+    <h2 class="title">37% of people <span style="color:gray;">responded to the article and interacted with the reading</span> like you. </h2></br><h2 id='ranking'>That means you think and read like the <u>majority</u> of Harvard students. </h2></br>
 
-    <h2 style="color:gray;">Now see where <b>your friends</b> stand on this issue. </h2><h2>Share the original article from the Harvard Crimson: <a href="http://www.thecrimson.com/column/the-red-line/article/2013/10/23/dont-teach-for-america/" style="color:#0fbefd;">Don't Teach For America</a></h2>
+    <h2 style="color:gray;">Like what you read?</h2><h2>Share the original article from the Harvard Crimson: <a href="http://www.thecrimson.com/column/the-red-line/article/2013/10/23/dont-teach-for-america/" style="color:#0fbefd;">Don't Teach For America</a></h2>
 
-    </br></br><h3 style="color:gray;">Like the study?</h3> <h3>Share it by link <a href="http://tinyurl.com/OpinionSpectrum" style="color:#0fbefd;">http://tinyurl.com/OpinionSpectrum</a> or on Facebook </h3>
+    </br></br><h3 style="color:gray;">Like the study?</h3> <h3>Share it by link <a href="http://tinyurl.com/thinkHarvard" style="color:#0fbefd;">http://tinyurl.com/thinkHarvard</a> or on Facebook </h3>
   
     <script>
     function fbShare(url, title, descr, image, winWidth, winHeight) {
@@ -334,7 +342,7 @@ function shuffle(array) {
     }
     </script>
 
-    <a href="javascript:fbShare('http://tinyurl.com/opinionspectrum', 'We want to know the current opinion of TFA!', 'Where do you stand on this issue?', 'https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQ7q-diIV5gBd2EVXNu3MuM6HPqXqPjDfvtiy6cX3OoO0t9LIPm', 520, 350)"><img style="height:200px" src='https://moodle.org/pluginfile.php/50/local_plugins/plugin_logo/687/FB-f-Logo__blue_512.png'></a>
+    <a href="javascript:fbShare('http://tinyurl.com/thinkHarvard', 'Do you think like a Harvard student?', 'Find out here!', 'https://scontent-b-iad.xx.fbcdn.net/hphotos-frc3/q72/s720x720/1465284_10151738747892117_185154923_n.jpg', 520, 350)"><img style="height:200px" src='https://moodle.org/pluginfile.php/50/local_plugins/plugin_logo/687/FB-f-Logo__blue_512.png'></a>
 </br></br>
 </div> 
 </br></br>
