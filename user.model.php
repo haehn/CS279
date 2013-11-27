@@ -17,6 +17,32 @@ class User extends Object {
 
   public $nickname = '';
 
+  public $general_stance = '';
+
+  public $support_point1 = '';
+
+  public $support_point2 = '';
+
+  public $reaction = '';
+
+  public $your_stance = '';
+
+  public $skim_comments = '';
+
+  public $take_from_comments = '';
+
+  public $one_adjective = '';
+
+  public $another_adjective = '';
+
+  public $share = '';
+
+  public $read_before = '';
+
+  public $comments = '';
+
+  public $timeleft = '';
+
 }
 
 
