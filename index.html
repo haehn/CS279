@@ -102,7 +102,7 @@ function shuffle(array) {
 <!-- HOME -->
 <div id="home">
 <h1 class="title">Your Opinion Matters</h1>
-<div style="font-size:20px;">What are people thinking about...? Where does your opinion lie on the spectrum?</div>
+<h2>What are people <span style="color:#0fbefd;">thinking</span> about TFA?</h2><h2 style="color:gray;">Where does <span style="color:#0fbefd;">your opinion</span> lie on the spectrum?</h2>
 <!-- button from HOME to INSTRUCTIONS -->
 </br>
 <img class="homeimg" src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQ7q-diIV5gBd2EVXNu3MuM6HPqXqPjDfvtiy6cX3OoO0t9LIPm">
@@ -117,12 +117,12 @@ function shuffle(array) {
 <div style="margin-left:25%;margin-right:25%;">
 <h1 class="title">Statement of Informed Consent</h1>
 <div class="content" style="text-align:left;overflow-y:scroll;height:50%">
-<ul>You're about to participate in a research study. Your contribution to our research allows us to learn more about <b>how opinions differ on TFA</b>.</ul>
+<ul>You're about to participate in a research study. Your contribution to our research allows us to learn more about <b>how opinions differ on Teach For America</b>, or TFA.</ul>
 <ul><i>Please read the following information carefully before proceeding.</i></ul>
 <ul><h4>Why we are doing this research</h4></ul>
-<ul>We are trying to understand how PEOPLES OPINONS DIFFER ON THIS ISSUE. We are also trying to understand how different commenting systems perform and affect engagement. </ul>
+<ul>We are trying to understand how people's opinions range and how they are spread out (eg. bell curve/normal spread) surrounding TFA. We are also trying to understand how commenting systems perform and affect engagement. </ul>
 <ul><h4>What you will have to do</h4></ul>
-<ul>You will be shown an article of a controversial NATURE. Feel free to make comments and reply to comments as you wish. There will be questions regarding your opinion of the article afterwards. </ul>
+<ul>You will be shown an article concerning Teach For America, taken from the Harvard Crimson. Feel free to make comments and reply to comments as you wish. There will be questions regarding basic information in the beginning and your opinion of the article afterwards. </ul>
 <ul><h4>Potential risks</h4></ul>
 <ul>There are no risks anticipated in taking part in this study and you are free to leave at any time. </ul>
 <ul><h4>Duration</h4></ul>
@@ -145,10 +145,10 @@ function shuffle(array) {
 <div style="margin-left:25%;margin-right:25%;">
 <h1 class="title">Instructions</h1>
 <div class="content" style="text-align:left;">
-<ul>This test will investigate where you stand on the currently debated issue with TFA. Your task is to <b>read</b> the article and to <b>interact</b> with it as you see fit.</ul>
-<ul>A 10 minute timer will be put in place. If you finish reading after 2 minutes, you can go to the opinion section by clicking the 'Finish Reading' button. </ul>
-<ul>The opinion section will gauge where you stand on this issue.</ul>
-<ul>Your opinion on the spectrum will be shown at the end, as well as how many others thought the same way you did. </ul>
+<ul>This test will investigate where you stand on the currently debated issue around TFA. Your task is to <b>read</b> the article and to <b>interact</b> with it as you see fit.</ul>
+<ul>A <b>10-minute</b> timer will be put in place. If you finish reading after two minutes, you can go to the opinion section by clicking the 'Finish Reading' button. </ul>
+<ul>The <b>opinion section</b> will gauge where you stand on this issue.</ul>
+<ul>At the end, you will see how many others <b>think the same way you do</b> on this issue. Since the majority of our participant pool is coming from Harvard College, you will discover how divergent or convergent your opinion is to (other) Harvard students. </ul>
 
 </div>
 </div>
@@ -271,13 +271,15 @@ function shuffle(array) {
 </div>
 
 <!-- FINISH end page -->
-<div id="finish" style="display:none;">
-    <h1>Thank you for participating in our study! We really appreciate your help.</h1>
+<div id="finish" class="content" style="display:none;">
+    <h1>Thank you for participating in our study.</br><div style="color:gray;">We really appreciate your help!</div></h1>
 
-    <h2 class="title">37% of people agree with your stance! </h2></br><h2 id='ranking'>Spread your opinions around. You are special! </h2></br>
+    <h2 class="title">37% of people agree with your stance. </h2></br><h2 id='ranking'>The <u>majority</u> of Harvard students actually think the same. </h2></br>
     
 
-    <h2>Now see if <b>your friends</b> think the same! Send them this link: http://tinyurl.com/opinionspectrum or</h2>
+    <h2 style="color:gray;">Now see where <b>your friends</b> stand on this issue. </h2><h2>Share the original article from the Harvard Crimson: <a href="http://www.thecrimson.com/column/the-red-line/article/2013/10/23/dont-teach-for-america/" style="color:#0fbefd;">Don't Teach For America</a></h2>
+
+    </br></br><h3 style="color:gray;">Like the study?</h3> <h3>Share it by link <a href="http://tinyurl.com/OpinionSpectrum" style="color:#0fbefd;">http://tinyurl.com/OpinionSpectrum</a> or on Facebook </h3>
   
     <script>
     function fbShare(url, title, descr, image, winWidth, winHeight) {
@@ -287,7 +289,8 @@ function shuffle(array) {
     }
     </script>
 
-    <a href="javascript:fbShare('http://tinyurl.com/opinionspectrum', 'We want to know the current opinion of TFA!', 'Where do you stand on this issue?', 'https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQ7q-diIV5gBd2EVXNu3MuM6HPqXqPjDfvtiy6cX3OoO0t9LIPm', 520, 350)"><img src='gfx/fbsharebtn.png'></a>
+    <a href="javascript:fbShare('http://tinyurl.com/opinionspectrum', 'We want to know the current opinion of TFA!', 'Where do you stand on this issue?', 'https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQ7q-diIV5gBd2EVXNu3MuM6HPqXqPjDfvtiy6cX3OoO0t9LIPm', 520, 350)"><img style="height:200px" src='https://moodle.org/pluginfile.php/50/local_plugins/plugin_logo/687/FB-f-Logo__blue_512.png'></a>
+</br></br>
 </div> 
-
+</br></br>
 </body>
