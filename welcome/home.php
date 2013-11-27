@@ -21,6 +21,7 @@ window.onload = function() {
   if (typeof username == 'undefined') {
     username = 'Anonymous';
   }
+  USER_ID = config.userid;
 
   MM.user = (username);
 
@@ -59,7 +60,7 @@ window.onload = function() {
 <body>
 
 <div id='timer'>
-  <script type='text/javascript'>var myCountdown1 = new Countdown({width:100, height:40, padding:0.6,time:10*60, rangeHi:"minute",onComplete  : MM.done});</script> <button class='finish_btn' onclick='MM.done();'>Finish reading > </button>
+  <script type='text/javascript'>myCountdown1 = new Countdown({width:100, height:40, padding:0.6,time:10*60, rangeHi:"minute",onComplete  : MM.done});</script> <button class='finish_btn' onclick='MM.done();'>Finish reading > </button>
 </div>
 
 <div id='left' style='float:left;width:50%;height:100%;'>

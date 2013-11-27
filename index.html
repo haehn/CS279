@@ -47,6 +47,15 @@ window.onload = function() {
     $('#questionnaire').show();    
   }
 
+  if ('userid' in argsParsed) {
+    USER_ID = argsParsed.userid;
+    console.log('got user id', USER_ID);
+  }
+
+  if ('timeleft' in argsParsed) {
+    TIME_LEFT = argsParsed.timeleft;
+  }
+
 
  
      $( "#your_stance" ).slider();
@@ -203,7 +212,7 @@ function shuffle(array) {
 <ul><b>Please feel free to add comments to express your opinion.</b></ul>
 <ul>You can comment as <b>anonymous</b> or using a custom pseudonym:</ul>
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="nickname" value="custom">Username/Pseudonym: <input id='nickname' type='text' class='points'> &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="nickname" value="custom">Username/Pseudonym: <input id='nickname' type='text' class='points' style='width:150px;'> &nbsp;&nbsp;&nbsp;
 <input type="radio" name="nickname" value="anonymous">anonymous &nbsp;&nbsp;&nbsp;
 </div>
 </div>

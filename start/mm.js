@@ -428,7 +428,8 @@ MM.done = function() {
   }
 
   //console.log('test');
-  window.location.replace("../index.html?x");
+  TIME_LEFT = myCountdown1.J - Date.now();
+  window.location.replace("../index.html?q&userid="+USER_ID+'&timeleft='+TIME_LEFT);
 }
 
 
