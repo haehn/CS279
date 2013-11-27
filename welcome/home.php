@@ -67,7 +67,7 @@ window.onload = function() {
 
   <div id='content'>
 
-<div id='share' style='position:absolute;right:52%;'><button id='share_btn'>Share the original article</button></div>
+<div id='share' style='position:absolute;right:52%;'><button id='share_btn'> > Share Original Article</button></div>
 
   <?php
 
