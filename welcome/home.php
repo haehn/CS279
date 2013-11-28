@@ -51,6 +51,12 @@ window.onload = function() {
 
   $('#share').on('click', MM.share);
 
+  $('#right').css('width', $(window).width() - 581 + 'px');
+  $('#mind_margin').css('left', '581px');
+  $('#mind_margin').css('width', $(window).width()-581 + 'px');
+
+  $('.scroll-bar').css('width', $(window).width()-620 + 'px');
+
 }
 
 
@@ -63,11 +69,11 @@ window.onload = function() {
   <script type='text/javascript'>myCountdown1 = new Countdown({width:100, height:40, padding:0.6,time:10*60, rangeHi:"minute",onComplete  : MM.done});</script> <button class='finish_btn' onclick='MM.done();'>Finish reading > </button>
 </div>
 
-<div id='left' style='float:left;width:50%;height:100%;'>
+<div id='left' style='float:left;width:581px;height:1686px;'>
 
   <div id='content'>
 
-<div id='share' style='position:absolute;right:52%;'><button id='share_btn'> > Share Original Article</button></div>
+<div id='share' style='position:absolute;left:441px'><button id='share_btn'> > Share Original Article</button></div>
 
   <?php
 
@@ -132,7 +138,7 @@ window.onload = function() {
 <div id='new_comment_line' class='comment_line'></div>
 
    <div class="scroll-bar-wrap ui-widget-content ui-corner-bottom" style='width:45%'>
-      <div class="scroll-bar" style="width: 47%;position: fixed;left: 52%;bottom: 1%;z-index: 100000;"></div>
+      <div class="scroll-bar" style="position: fixed;left: 601px;bottom: 1%;z-index: 100000;"></div>
     </div>
 
 </body>

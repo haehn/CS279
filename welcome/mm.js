@@ -191,6 +191,7 @@ MM.read_comments = function() {
 
       var new_line = $('#new_comment_line').clone();
       // new_line.css('top',$(window).scrollTop()+parseInt(c.y,10)+$('#existing_comment').height()/2);
+      // var adjusted_y = c.y/615 * $(window).height();
       new_line.css('top',parseInt(c.y,10) - $('#timer').height());
       // new_line.css('left',$(window).width()/2-parseFloat($('#content').css('margin'),10));
       new_line.css('left',0);
@@ -295,6 +296,8 @@ MM.read_comments = function() {
       new_div.addClass('small_text');
       new_div.show();
       new_div.css('top',c.y-$('#existing_comment').height()/2 - $('#timer').height());
+      // var adjusted_y = c.y/615 * $(window).height();
+      // new_line.css('top',parseInt(c.y,10) - $('#existing_comment').height()/2-$('#timer').height());      
       new_div.css('margin-left', left);
       new_div.addClass('comment-del');
       // new_div.css('left',c.x);
