@@ -47,7 +47,7 @@ window.onload = function() {
 
     $('.finish_btn').addClass('finish_btn_active');
 
-  }, 2000);
+  }, 2*60000);
 
   $('#share').on('click', MM.share);
 
