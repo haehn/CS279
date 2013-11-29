@@ -42,4 +42,6 @@ User = function() {
 
   this.prototype = '';
 
+  this.tfa = '';
+
 }

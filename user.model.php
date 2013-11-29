@@ -45,6 +45,8 @@ class User extends Object {
 
   public $prototype = '';
 
+  public $tfa = '';
+
 }
 
 
