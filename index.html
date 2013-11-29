@@ -70,15 +70,19 @@ function init_experiment() {
   var prototypes = shuffle(['horizontal','vertical']);
   var curr_prototype = prototypes[0];
 
-  // redirect to p1
-  if (curr_prototype == 'horizontal') {
-      window.location.replace("welcome?userid="+USER_ID +"&username="+NICKNAME);
-  }
+  $.ajax({url:'log.php?what='+'START NEW EXPERIMENT, USER_ID: '+USER_ID+' USERNAME: '+NICKNAME+' PROTOTYPE: '+curr_prototype}).done(function() {
 
-  // redirect to p2
-  if (curr_prototype == 'vertical') {
-      window.location.replace("start?userid="+USER_ID +"&username="+NICKNAME);
-  }
+    // redirect to p1
+    if (curr_prototype == 'horizontal') {
+        window.location.replace("welcome?userid="+USER_ID +"&username="+NICKNAME);
+    }
+
+    // redirect to p2
+    if (curr_prototype == 'vertical') {
+        window.location.replace("start?userid="+USER_ID +"&username="+NICKNAME);
+    }
+
+  });
 
 }
 

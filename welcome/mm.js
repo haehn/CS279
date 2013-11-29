@@ -397,6 +397,11 @@ MM.upvote = function(c) {
     $('#comment-'+c.id).children('.comment_footer').children('.upvotes').html(c.upvotes);
 
 
+    $.ajax({url:'../log.php?what='+'UPVOTE, USER_ID: '+USER_ID+' USERNAME: '+MM.user+' COMMENT_ID: '+c.id+' MINDMARGIN'}).done(function() {});
+
+
+
+
   });
 
   return false;
@@ -414,6 +419,11 @@ MM.downvote = function(c) {
     //MM.create_ui();
 
     $('#comment-'+c.id).children('.comment_footer').children('.downvotes').html(c.downvotes);
+
+
+    $.ajax({url:'../log.php?what='+'DOWNVOTE, USER_ID: '+USER_ID+' USERNAME: '+MM.user+' COMMENT_ID: '+c.id+' MINDMARGIN'}).done(function() {});
+
+
 
   });
 
@@ -477,9 +487,14 @@ MM.done = function() {
     return;
   }
 
-  //console.log('test');
-  TIME_LEFT = myCountdown1.J - Date.now();
-  window.location.replace("../index.html?q&userid="+USER_ID+'&timeleft='+TIME_LEFT);
+  $.ajax({url:'../log.php?what='+'END EXPERIMENT, USER_ID: '+USER_ID+' USERNAME: '+MM.user+' MINDMARGIN'}).done(function() {
+
+    //console.log('test');
+    TIME_LEFT = myCountdown1.J - Date.now();
+    window.location.replace("../index.html?q&userid="+USER_ID+'&timeleft='+TIME_LEFT);
+
+  });
+
 }
 
 MM.share = function(e) {

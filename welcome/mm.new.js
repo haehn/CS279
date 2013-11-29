@@ -74,6 +74,12 @@ MM.submit_new_comment = function() {
 
     MM.create_ui();
 
+
+    var c = JSON.parse(res);
+
+    $.ajax({url:'../log.php?what='+'NEW COMMENT, USER_ID: '+USER_ID+' USERNAME: '+MM.user+' COMMENT_ID: '+c.id+' MINDMARGIN'}).done(function() {});
+
+
   })
 
 }
@@ -100,6 +106,13 @@ MM.submit_response = function(id) {
   DB.store(o, function(res) { 
 
     MM.create_ui();
+
+
+    var c = JSON.parse(res);
+
+    $.ajax({url:'../log.php?what='+'NEW REPLY, USER_ID: '+USER_ID+' USERNAME: '+MM.user+' COMMENT_ID: '+c.id+' PARENT_ID: '+c.parent_id+' MINDMARGIN'}).done(function() {});
+
+
 
   })
 
