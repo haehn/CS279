@@ -24,6 +24,8 @@ class Comment extends Object {
 
   public $browser = '';
 
+  public $userid = -1;
+
   public function __construct() {
 
     // we need to assign these values in the contructor

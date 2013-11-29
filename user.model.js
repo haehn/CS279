@@ -40,4 +40,6 @@ User = function() {
 
   this.timeleft = '';
 
+  this.prototype = '';
+
 }

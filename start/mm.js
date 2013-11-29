@@ -429,7 +429,7 @@ MM.done = function() {
 
   //console.log('test');
   TIME_LEFT = myCountdown1.J - Date.now();
-  window.location.replace("../index.html?q&userid="+USER_ID+'&timeleft='+TIME_LEFT);
+  window.location.replace("../index.html?x&userid="+USER_ID+'&timeleft='+TIME_LEFT);
 }
 
 

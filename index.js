@@ -99,7 +99,7 @@ submit_q = function() {
       //   continue;
       // }
 
-      var skipped = ['id', 'age', 'gender', 'concentration', 'handed', 'reading', 'nickname', '_classname', 'timeleft'];
+      var skipped = ['prototype', 'id', 'age', 'gender', 'concentration', 'handed', 'reading', 'nickname', '_classname', 'timeleft'];
 
       if (skipped.indexOf(a) != -1) {
         continue;
@@ -143,6 +143,7 @@ submit_q = function() {
     }    
 
     u.timeleft = TIME_LEFT;
+    u.prototype = PROTOTYPE;
 
     // and store it again
     DB.store(u, function() {

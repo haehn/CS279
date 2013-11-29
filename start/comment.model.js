@@ -20,4 +20,6 @@ Comment = function() {
 
   this.browser = '';
 
+  this.userid = -1;
+
 }

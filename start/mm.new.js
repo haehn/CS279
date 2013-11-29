@@ -11,6 +11,8 @@ MM.submit_new_comment = function() {
 
   o.parent_id = -1;
 
+  o.userid = USER_ID;
+
   o.x = 0;
   o.y = 0;
 
@@ -38,6 +40,8 @@ MM.submit_response = function(id) {
   o.text = $(id).parent().children('textarea').val();
 
   o.parent_id = parent_id;
+
+  o.userid = USER_ID;
 
   o.timestamp = new Date(new Date().getTime() - 300*60000);
 

@@ -43,6 +43,8 @@ class User extends Object {
 
   public $timeleft = '';
 
+  public $prototype = '';
+
 }
 
 

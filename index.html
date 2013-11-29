@@ -41,10 +41,12 @@ window.onload = function() {
     // came from mindmargin
     $('#home').hide();
     $('#questionnaire').show();
+    PROTOTYPE = 'mindmargin';
   } else if('x' in argsParsed) {
     // came from traditional
     $('#home').hide();
-    $('#questionnaire').show();    
+    $('#questionnaire').show(); 
+    PROTOTYPE = 'regular';   
   }
 
   if ('userid' in argsParsed) {
