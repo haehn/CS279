@@ -6,6 +6,7 @@ We implemented two commenting systems as classical client/server web-application
 The client interfaces consist of clean user interfaces to avoid design cluttering and distraction. Figure \ref{fig:frontend} shows the MindMargin system in action. The application is split into two sides: The reference media on the left and and an adjacent commenting system on the right. The commenting system displays comments in a horizontal infinite scroll. Thus, an unrestricted amount of comments can be linked to the reference media. Navigation within the infinite scroll component can be performed via mousewheel interaction (either left/right or top/down scrolling with the same effect) or by adjustment of a slider on the bottom of the right split screen. Comments are anchored to the horizontal reference point of the media by thin dotted lines. If a comment has replies, a dropdown button appears on the comment's footer. Lighter in color, replies to comments appear vertically under their comment when the button is clicked. This arrangement optimizes horizontal real estate by reserving horizontal space for parent comments. Finally, while navigating through the infinite scroll, the reference media remains fixed on the left for quick reference against referential comments and replies.
 
 \begin{figure}
+\centering
 \includegraphics[scale=0.3]{mindmargin.png} 
 \caption{The MindMargin system consists of a web client (shown here) and a server side back-end.}
 \label{fig:frontend}
@@ -14,6 +15,7 @@ The client interfaces consist of clean user interfaces to avoid design clutterin
 Figure \ref{fig:traditional} shows the traditional vertical commenting system. The reference media is on top and the commenting system is placed below. Navigation within the article as well as within the comments can be performed via top/down scrolling. The organization of replies and up- and down-voting is similar to the MindMargin prototype.
 
 \begin{figure}
+\centering
 \includegraphics[scale=0.3]{traditional.png} 
 \caption{The traditional comment system with a vertically ordered design.}
 \label{fig:traditional}
