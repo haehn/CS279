@@ -1,10 +1,29 @@
-\section {Implementation}
+\section {Approach}
 
 We implemented two commenting systems as classical client/server web-applications. The first commenting system is MindMargin with anchored comments on a horizontal infinite scroll next to the reference medium. The second commenting system is a traditional vertical interface. Users interact with the clients as a front-end system using a web browser. The clients communicate with the server back-end using AJAX to a) request existing data or b) persist new data. The server reads and stores data in a relational database.
 
 \subsection{Front-end}
 The client interfaces consist of clean user interfaces to avoid design clutter and distraction. Figure \ref{fig:frontend} shows the MindMargin system in action. The application is split into two sides: The reference media on the left and and an adjacent commenting system on the right. The commenting system displays comments in a horizontal infinite scroll. Thus, an unrestricted amount of comments can be linked to the reference media. Navigation within the infinite scroll component can be performed via mousewheel interaction (either left/right or top/down scrolling with the same effect) or by adjustment of a slider on the bottom of the right split screen. Comments are anchored to the horizontal reference point of the media by thin dotted lines. If a comment has replies, a dropdown button appears on the comment's footer. Lighter in color, replies to comments appear vertically under their comment when the button is clicked. This arrangement optimizes horizontal real estate by reserving horizontal space for parent comments. Finally, while navigating through the infinite scroll, the reference medium remains fixed on the left for quick reference against referential comments and replies.
 
+We distinguish between popular and regular comments. Popular comments are displayed either next to the article in MindMargin and directly under the next in the traditional layout. While up- and down-votes impact popularity of comments, we also included the comment time. Comments which are less than 60 minutes old are automatically labelled as popular. This ensures that new comments do not go under when many comments exist. We define our metric for popularity as follows:
+
+\begin{displaymath}
+   c_{popular} = 
+     \begin{cases}
+     v_{up} + T &, \text{if}~v_{up} > v_{down}\\
+     v_{up} \cdot 1.3 - v_{down} + T &, \text{if otherwise}
+	\end{cases}
+\end{displaymath} 
+\begin{displaymath}	
+	T = 
+		\begin{cases}
+		9 &, \text{if}~c_{time} < 60 \text{minutes}\\
+		0 &, \text{if otherwise}
+		\end{cases}
+\end{displaymath} 
+
+Comments are marked popular if $c_{popular} > 8$. This metric was included in both commenting systems.   
+   
 \begin{figure}
 \centering
 \includegraphics[scale=0.3]{mindmargin.png} 
@@ -16,7 +35,7 @@ Figure \ref{fig:traditional} shows the traditional vertical commenting system. T
 
 \begin{figure}
 \centering
-\includegraphics[scale=0.3]{traditional.png} 
+\includegraphics[scale=0.18]{traditional.png} 
 \caption{The traditional comment system with a vertically ordered design.}
 \label{fig:traditional}
 \end{figure}
