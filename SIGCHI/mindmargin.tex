@@ -1,0 +1,116 @@
+\documentclass{chi-ext}
+% Please be sure that you have the dependencies (i.e., additional LaTeX packages) to compile this example.
+% See http://personales.upv.es/luileito/chiext/
+
+%% EXAMPLE BEGIN -- HOW TO OVERRIDE THE DEFAULT COPYRIGHT STRIP -- (July 22, 2013 - Paul Baumann)
+ \copyrightinfo{Copyright is held by the author/owner(s). \\
+ {\emph{CHI'14}}, April 26--May 1, 2014, Toronto, Canada. \\
+Copyright \copyright~2014 ACM ISBN/14/04...\$15.00. \\
+ DOI string from ACM form confirmation}
+%% EXAMPLE END -- HOW TO OVERRIDE THE DEFAULT COPYRIGHT STRIP -- (July 22, 2013 - Paul Baumann)
+
+\title{MindMargin: An Article-Adjacent Commenting Platform}
+
+\numberofauthors{3}
+% Notice how author names are alternately typesetted to appear ordered in 2-column format;
+% i.e., the first 4 autors on the first column and the other 4 auhors on the second column.
+% Actually, it's up to you to strictly adhere to this author notation.
+\author{
+  \alignauthor{
+  	\textbf{Daniel Haehn}\\
+  	\affaddr{School of Engineering and Applied Sciences}\\  	
+  	\affaddr{Harvard University}\\
+  	\affaddr{Cambridge, MA USA}\\
+  	\email{haehn@seas.harvard.edu}
+  }
+  \vfil
+  \alignauthor{
+  	\textbf{Sharon Zhou}\\
+  	\affaddr{Harvard College}\\
+  	\affaddr{Cambridge, MA USA}\\
+  	\email{zhou12@college.harvard.edu}
+  }
+%  \alignauthor{
+%  	\textbf{Fifth Author}\\
+%  	\affaddr{AuthorCo, Inc.}\\
+%  	\affaddr{123 Author Ave.}\\
+%  	\affaddr{Authortown, PA 54321 USA}\\
+%  	\email{author6@anotherco.com}
+%  }
+  \vfil
+  \alignauthor{
+  	\textbf{Krzysztof Gajos}\\
+  	\affaddr{School of Engineering and Applied Sciences}\\
+  	\affaddr{Harvard University}\\
+  	\affaddr{Cambridge, MA USA}\\
+  	\email{kgajos@eecs.harvard.edu}
+  }
+%  \alignauthor{
+%  	\textbf{Sixth Author}\\
+%  	\affaddr{AuthorCo, Inc.}\\
+%  	\affaddr{123 Author Ave.}\\
+%  	\affaddr{Authortown, PA 54321 USA}\\
+%  	\email{author7@anotherco.com}
+%  }
+}
+
+% Paper metadata (use plain text, for PDF inclusion and later re-using, if desired)
+\def\plaintitle{MindMargin: Capturing Reader Engagement with an Article-Adjacent Commenting Platform}
+\def\plainauthor{Daniel Haehn, Sharon Zhou, Krzysztof Gajos}
+\def\plainkeywords{Comments; anchored; commenting systems; personal reflection.}
+\def\plaingeneralterms{Comments, Personal Reflection}
+
+\hypersetup{
+  % Your metadata go here
+  pdftitle={\plaintitle},
+  pdfauthor={\plainauthor},  
+  pdfkeywords={\plainkeywords},
+  pdfsubject={\plaingeneralterms},
+  % Quick access to color overriding:
+  %citecolor=black,
+  %linkcolor=black,
+  %menucolor=black,
+  %urlcolor=black,
+}
+
+\usepackage{graphicx}   % for EPS use the graphics package instead
+\usepackage{balance}    % useful for balancing the last columns
+\usepackage{bibspacing} % save vertical space in references
+
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Commenting systems are popular throughout many websites. Reading and writing comments can support passive consumption of media by increasing active user engagement in many ways. Information exchange, personal reflection, and lively discussion are only some possible outcomes. We explore how user engagement can be increased by proposing a new commenting system and interface, MindMargin. In contrast to traditional commenting systems where comments are featured below the article, MindMargin presents comments adjacent to its reference media. Users can post and navigate comments and replies on a horizontal infinite scroll. This exposes users to a diverse array of opinions as they read since comments in our system are anchored to relevant areas of the article. 
+\end{abstract}
+
+\keywords{\plainkeywords}
+
+\category{H.5.2.}{Information Interfaces and Presentation (e.g. HCI)}{User Interfaces}
+
+\terms{\plaingeneralterms}
+
+\input{introduction.tex}
+
+\input{relatedwork.tex} 
+
+\input{technology.tex}
+
+\input{experiment.tex}
+
+\input{results_and_discussion.tex}
+
+\input{conclusion.tex}
+
+\section{References format}
+References must be the same font size as other body text.
+% REFERENCES FORMAT
+% References must be the same font size as other body text.
+
+\balance
+\bibliographystyle{acm-sigchi}
+\bibliography{lit.bib}
+
+\end{document}
