@@ -11,21 +11,27 @@ We have also implemented a metric to distinguish between popular and regular com
 
 Comments are marked popular if $c_{popular} > 8$. This metric was included in both commenting systems.
    
+\marginpar{
 \begin{figure}
-\centering
-\includegraphics[scale=0.3]{mindmargin.png} 
-\caption{The MindMargin system consists of a web client (shown here) and a server side back-end.}
-\label{fig:frontend}
+  \begin{center}
+  \includegraphics[width=\marginparwidth]{mindmargin.png}
+  \caption{The MindMargin system consists of a web client (shown here) and a server side back-end.}
+  \label{fig:frontend}
+  \end{center}
 \end{figure}
-
+}
+   
 Figure \ref{fig:traditional} shows the traditional vertical commenting system. The reference media appears first and on top of the commenting system that follows below. Navigation within the article as well as within the comments can be performed via top/down scrolling. The organization of replies and up- and down-voting is similar to the MindMargin prototype.
 
+\marginpar{
 \begin{figure}
-\centering
-\includegraphics[scale=0.18]{traditional.png} 
-\caption{The traditional comment system with a vertically ordered design.}
-\label{fig:traditional}
+  \begin{center}
+  \includegraphics[width=\marginparwidth]{traditional.png}
+  \caption{The traditional comment system with a vertically ordered design.}
+  \label{fig:traditional}
+  \end{center}
 \end{figure}
+}
 
 The front-ends of both prototypes were written in JavaScript using the popular jQuery and jQuery UI libraries. A model-view-controller pattern was chosen to structure the application code base. The user interface itself were created to adjust responsively to any window size.
 
