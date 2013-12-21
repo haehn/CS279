@@ -15,33 +15,23 @@ We found that for users whose familiarity of the article was ``none,`` there was
 
 However, there are limitations to our observations, as the p-values are XX and XX suggesting that our trends are not yet statistically significant. This could likely result from using a between-subjects methodology. To address this in subsequent research, we plan to significantly increase the participant pool and to employ a within-subjects methodology, in which we query participants for their individual stance prior to their reading of the article and observe the deltas in SP values afterward. 
 
+\marginpar{
+\begin{figure}
+  \begin{center}
+  \includegraphics[width=\marginparwidth]{mosaicplot.png}
+  \caption{When using MindMargin, the majority of participants described the comments as positive.}
+  \label{fig:mosaic}
+  \end{center}
+\end{figure}
+}
+
 \subsection{Hypothesis 2}
 Our second hypothesis predicted an overall increase in positive impressions on comments when using the MindMargin interface. We asked participants who read the comments to input two adjectives in free-text describing either their reaction to the comments or a description of the comments. We then asked four independent volunteers, blind to the experiment, to classify these adjectives using a four-bin classifier (``Positive,`` ``Negative,`` ``Neutral,`` and ``Invalid``). They were told to classify the adjectives provided that they were in answer to the question, posed on the survey: ``What did you think of the comments (from article X)?`` 
 
 We removed adjectives given two or more ``Invalid`` classifications as outliers, which only appeared in the vertical condition. We found that adjectives without uniform encoding observed an uncontradictory mix of classifications: ``Positive`` and ``Neutral`` or ``Neutral`` and ``Negative,`` but never ``Positive`` and ``Negative.`` We were thus confident in using the resulting median encodings for the final classification of the specified adjectives. 
 
-Then, we compared the impressions between MindMargin and the traditional commenting system. We observed a drastic change of impressions when using MindMargin. As seen in figure \ref{fig:trad_pie}, the majority of participants using the traditional commenting system described the comments as negative (68\%). In contrast, when using MindMargin, the majority of participants described the comments as positive (48\%) or neutral (48\%) as seen in figure \ref{fig:mm_pie}. These results have lead us to conclude that while readers were exposed to identical comments, users of MindMargin had a significantly more positive impression of the comments, considering the comments more substantial and ultimately placing greater trust and consideration into others' opinions.
+Then, we compared the impressions between MindMargin and the traditional commenting system. We observed a drastic change of impressions when using MindMargin. As seen in figure \ref{fig:mosaic}, the greater majority of comment impressions in the traditional interface was negative (negative at 34.8\%, neutral at 17.2\%, positive 4.7\%) while most of the comment impressions among users of MindMargin were classified either positive or neutral (negative at 4.7\%, neutral at 20.3\%, positive 18.8\%). These results have lead us to conclude that while readers were exposed to identical comments, users of MindMargin had a significantly more positive impression of the comments, considering the comments more substantial and ultimately placing greater trust and consideration into others' opinions.
 
 XXXX aren't we getting rid of the pie charts and those stats? And using ordinal regression of the new data instead? XXXX
-
-\marginpar{
-\begin{figure}
-  \begin{center}
-  \includegraphics[width=\marginparwidth]{mm_piechart.png}
-  \caption{When using MindMargin, the majority of participants described the comments as positive.}
-  \label{fig:mm_pie}
-  \end{center}
-\end{figure}
-}
-
-\marginpar{
-\begin{figure}
-  \begin{center}
-  \includegraphics[width=\marginparwidth]{traditional_piechart.png}
-  \caption{The majority of participants using the traditional commenting system described the comments as negative.}
-  \label{fig:trad_pie}
-  \end{center}
-\end{figure}
-}
 
 In addition to our quantitative results, we would also like to acknowledge qualitative feedback from a MindMargin user that suggests actions he/she took beyond the scope of reading and commenting article:``This article showed me a new perspective on TFA, which after doing research, I have realized I agree with.`` No written feedback suggesting actions outside the scope of the article was received from participants with the traditional commenting system. While there is insufficient evidence to conclude that MindMargin motivated the user's pursuit of further research into the issue, it nevertheless indicates that this reader using MindMargin thought critically and independently about the issue.
