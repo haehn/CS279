@@ -1,34 +1,60 @@
 \section{Introduction}
 
-News pages, media sites, online shops, blogs and social networks support the ability to give content-related feedback in the form of comments. Commenting systems on these sites are traditionally featured under, and separate from, the main content. This structure parallels the relationship between content and comments, as interactions with comments are markedly secondary to the primary task of reading or browsing primary content. However, studies on Fluid Documents and annotation interfaces that challenge typographic conventions, such as discussion boards and footnotes, reveal limitations in the traditional vertical interface and suggest alternative horizontal layouts~\cite{Brush,Guzdial,van,AnnotationsStudents,NewsInterfaces,FluidDocs,NB}. 
+News pages, media sites, online shops, blogs and social networks support the ability to give content-related feedback in the form of comments. Online commenting holds a promise that readers might share their views, provide additional relevant information and generally engage in lively, thoughtful discussion with others. Given increasing polarization of the public political discourse, and prevailing opinion that presenting people with diverse points of view helps people develop more nuanced views~\cite{ConsiderIt,Politics,NewsCube}, 
+the promise of deep and thoughtful discussion among the readers is particularly valuable.  However, [[this promise is not fulfilled: in particular, comments are frequently irrelevant or of low quality]]
 
-The Fluid Documents project aims to make information added into a page easier to locate in its source document by adjusting the typography of page. One specific study found that a fluid margin interface, as opposed to a fluid interline or overlay interface, had minimal disturbance to the user, because it did not move or occlude the primary text with the secondary text~\cite{FluidDocs}. 
+We hypothesize that low quality of many of the comments is only part of the challenge.  Even high quality comments have less impact on helping other readers develop more nuanced opinions than what might be possible.  In particular, we note that commenting systems on most sites are featured under, and separate from, the main content.  However, there is compelling prior research suggesting that separating additional content and discussion from the main content [[***has the following ill effects]]~\cite{Brush,Guzdial,van,AnnotationsStudents,NewsInterfaces,FluidDocs,NB}.
 
-The concept of anchoring annotations to references in a text has been known to qualitatively improve conversation among readers because it makes understanding the context of a comment cognitively easier~\cite{Brush,Guzdial,van}. Another study compares the four leading annotation interfaces: footnotes, interlinear commentary, ``sticky-note`` annotations, and marginal comments, concluding that the marginal interface is superior in minimizing distraction and enhancing visibility. The marginal interfaces studied, however, interact with the primary text. They are tagged to boxes around the referenced content to indicate where they are anchored~\cite{AnnotationsStudents}. 
+An alternative, explored previously particularly in educational settings~\cite{Brush,Guzdial,van,AnnotationsStudents}, is to present comments on the margin of the primary text and visibly linked to the relevant parts of the text.  Such anchored discussions improve conversation among readers of academic texts by making the context of the conversation much more clear~\cite{Brush,Guzdial,van}.  A study that compared the effect of placements of the notes on students' comprehension of the text, found that students who saw notes presented adjacent to the main text displayed deeper understanding of the text than students who saw those same notes placed at the end of the text~\cite{AnnotationsStudents}.
 
-We have thus chosen to anchor comments in MindMargin with a faint dotted line to the edge of the article that corresponds to the y-coordinate of its reference, yet still avoids disturbing the primary text.
+We build on these insights to investigate whether placing user comments side-by-side the main text can improve how much people consider diverse view points when forming their own opinion of the issue.  To enable empirical investigation of this question, we have built MindMaring, a commenting system that [[*****]].
 
-While online commenting provides an opportunity for readers to express their views and engage in lively discussion with others, the comments section of many websites has become a popular space for “flame wars.” The social act of “flaming,” or the posting of offensive content, regularly devolves into hostile fights among multiple users, diverting a legitimate discussion topic to an unrelated and often emotionally charged digression. This behavior is examined closely in many research fields, including user interface design, communications, and psychology~\cite{FlamingPsych,FlamingCommunications,FlamingSoftware,FlamingComp}. 
+%Another study compares the four leading annotation interfaces: footnotes, interlinear commentary, ``sticky-note`` annotations, and marginal comments, concluding that the marginal interface is superior in minimizing distraction and enhancing visibility. The marginal interfaces studied, however, interact with the primary text. They are tagged to boxes around the referenced content to indicate where they are anchored~\cite{AnnotationsStudents}. 
 
-Evidence in educational research, however, has shown that anchored annotated notes foster a deeper understanding of the text and facilitate more thoughtful teacher-to-student and peer-to-peer discussions~\cite{AnnotationsStudents,NB}. Studies on balancing people’s skewed opinions also suggest exposing readers to a variety of relevant perspectives so that they consider views that exist beyond a single article and author’s scope~\cite{ConsiderIt,Politics,NewsCube}. 
 
-Thus, while current commenting platforms often fail at drawing people into sensible and relevant conversation, we offer evidence to suggest a horizontal interface such as MindMargin can change people’s views and actions, and thus address this societal problem. From our evaluation and user study, it appears that people with prior exposure to the issue in the article become more moderate in their opinions, reporting less polar views than those using a traditional vertical interface.
+%This structure parallels the relationship between content and comments, as interactions with comments are markedly secondary to the primary task of reading or browsing primary content. However, studies on Fluid Documents and annotation interfaces that challenge typographic conventions, such as discussion boards and footnotes, reveal limitations in the traditional vertical interface and suggest alternative horizontal layouts~\cite{Brush,Guzdial,van,AnnotationsStudents,NewsInterfaces,FluidDocs,NB}. 
 
-\subsection{Hypotheses}
+
+
+%the comments section of many websites has become a popular space for “flame wars.” The social act of “flaming,” or the posting of offensive content, regularly devolves into hostile fights among multiple users, diverting a legitimate discussion topic to an unrelated and often emotionally charged digression. This behavior is examined closely in many research fields, including user interface design, communications, and psychology~\cite{FlamingPsych,FlamingCommunications,FlamingSoftware,FlamingComp}. 
+
+
+
+
+
+%The Fluid Documents project aims to make information added into a page easier to locate in its source document by adjusting the typography of page. One specific study found that a fluid margin interface, as opposed to a fluid interline or overlay interface, had minimal disturbance to the user, because it did not move or occlude the primary text with the secondary text~\cite{FluidDocs}. 
+
+
+%We have thus chosen to anchor comments in MindMargin with a faint dotted line to the edge of the article that corresponds to the y-coordinate of its reference, yet still avoids disturbing the primary text.
+
+
+%Evidence in educational research, however, has shown that anchored annotated notes foster a deeper understanding of the text and facilitate more thoughtful teacher-to-student and peer-to-peer discussions~\cite{AnnotationsStudents,NB}. 
+
+
+
+%Studies on balancing people’s skewed opinions also suggest exposing readers to a variety of relevant perspectives so that they consider views that exist beyond a single article and author’s scope~\cite{ConsiderIt,Politics,NewsCube}. 
+
+%Thus, while current commenting platforms often fail at drawing people into sensible and relevant conversation, we offer evidence to suggest a horizontal interface such as MindMargin can change people’s views and actions, and thus address this societal problem. From our evaluation and user study, it appears that people with prior exposure to the issue in the article become more moderate in their opinions, reporting less polar views than those using a traditional vertical interface.
+
 We propose two hypotheses for MindMargin's effect on its users in comparison to the traditional vertical interface:
 \begin{enumerate}
-\item Users of MindMargin will develop more thoughtful and nuanced opinions of an article, because MindMargin encourages readers to consider alternate views by exposing them to a greater diversity and number of comments.
-\item Users of MindMargin will report a more positive impression of the existing comments because MindMargin displays anchored comments that appear alongside relevant passages of the text.
+\item Users of MindMargin will develop more thoughtful and nuanced opinions of an article than users presented with those same comments using a traditional vertical interface. % because MindMargin encourages readers to consider alternate views by exposing them to a greater diversity and number of comments.  
+Specifically, we expect that users who interact with MindMargin will report more moderate stances on controversial issues than users of a traditional vertical interface.
+\item Users of MindMargin will report a more positive subjective impression of the existing comments because MindMargin displays anchored comments that appear alongside relevant passages of the text making the relevance of the comments to the primary text more apparent.
 \end{enumerate}
 
-\subsection{Contributions}
-This study presents the following novel contributions:
-\begin{itemize}
-\item A horizontally structured commenting interface such as MindMargin can expose users to a more diverse set of comments and compel those with existing exposure to the issue to think less divergently
-\item Anchored comments to relevant sections of the text in MindMargin compels users to not only have a more positive impression of, but also place greater trust in, the comments made by others
-%\begin{enumerate}
-%\item less extreme, polarized views on an issue by exposing them to a diversity of comments
-%\item a greater positive impression of comments made by other users 
-%\end{enumerate}
-\end{itemize}
+%\subsection{Contributions}
+
+The results of our online study show that participants had a significantly more positive impression of the comments related to a controversial article when those comments were presented using MindMargin compared to when those same comments were presented below the main article.  Participants who used MindMargin also reported a more moderate stance on the controversial issue raised in the article than participants who interacted with the traditional vertical layout interface.  Although this difference was not yet significant, it provides sufficient evidence for us to pursue a larger-scale study.
+
+
+%This study presents the following novel contributions:
+%\begin{itemize}
+%\item A horizontally structured commenting interface such as MindMargin can expose users to a more diverse set of comments and compel those with existing exposure to the issue to think less divergently
+%\item Anchored comments to relevant sections of the text in MindMargin compels users to not only have a more positive impression of, but also place greater trust in, the comments made by others
+%%\begin{enumerate}
+%%\item less extreme, polarized views on an issue by exposing them to a diversity of comments
+%%\item a greater positive impression of comments made by other users 
+%%\end{enumerate}
+%\end{itemize}
 
