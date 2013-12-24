@@ -2,34 +2,25 @@
 
 News pages, media sites, online shops, blogs and social networks support the ability to give content-related feedback in the form of comments. For readers and users, online commenting holds a compelling promise: to share their views, to contribute their relevant knowledge, and to engage in lively, thoughtful discussion with each other. As online political debate and discourse increasingly polarize and generalize individual political views, the prevailing opinion among researchers has been to present people with diverse perspectives in order to encourage more nuanced, independently reached points of view~\cite{ConsiderIt,Politics,NewsCube}. In light of this, the promise of deep and thoughtful online discussion becomes particularly valuable. However, because irrelevant and low-quality comments frequently crowd and dilute meaningful online conversations \cite{CommentQuality, FlamingCommunications}, this promise remains unfulfilled.
 
-We hypothesize that enhancing comment quality is only part of the challenge. Even high-quality comments have a limited influence on readers because of their equally limited visibility as other comments. Commenting systems most commonly rest beneath, and detached from, the main content of modern websites. Compelling existing research, however, suggests that separating secondary or additional content from the primary content [[***has the following ill effects]]~\cite{Brush,Guzdial,van,AnnotationsStudents,NewsInterfaces,FluidDocs,NB}.
+We hypothesize that enhancing comment quality is only part of the challenge. Even high-quality comments have a limited influence on readers because of their equally limited visibility as other comments. Commenting systems most commonly rest beneath, and detached from, the main content of modern websites. Compelling existing research, however, suggests that separating secondary or additional content, such as comments, from the primary content has lead to a decreased understanding of the primary content, a more superficial and less critical engagement with the primary content, an amplified confusion of the secondary content, increased errors of comprehension and proper reference in secondary content, increased cognitive difficulty to the reader in matching references in the secondary content to the primary content, ultimately interfering with the transfer of information from the primary to the secondary content and with the facility of fluid discussion in the secondary content~\cite{Brush,Guzdial,van,AnnotationsStudents,NewsInterfaces,FluidDocs,NB}.
 
-An alternative, explored previously particularly in educational settings~\cite{Brush,Guzdial,van,AnnotationsStudents}, is to present comments on the margin of the primary text and visibly linked to the relevant parts of the text.  Such anchored discussions improve conversation among readers of academic texts by making the context of the conversation much more clear~\cite{Brush,Guzdial,van}.  A study that compared the effect of placements of the notes on students' comprehension of the text, found that students who saw notes presented adjacent to the main text displayed deeper understanding of the text than students who saw those same notes placed at the end of the text~\cite{AnnotationsStudents}.
+An alternative that has been markedly explored in educational settings~\cite{Brush,Guzdial,van,AnnotationsStudents} is to present comments on the margin of the primary text, visibly linked to relevant sections of the text. Such anchored discussions improve conversation among readers of academic texts by making the context of the conversation clearer~\cite{Brush,Guzdial,van}. A study, which examined the placement of student- and teacher-generated annotations on students' comprehension of a text, found that students who saw and used annotations adjacent to the main text displayed a deeper understanding of the text than those who interacted with annotations placed at the end of the text~\cite{AnnotationsStudents}.
 
-We build on these insights to investigate whether placing user comments side-by-side the main text can improve how much people consider diverse view points when forming their own opinion of the issue.  To enable empirical investigation of this question, we have built MindMargin, a system that exposes the user to comments while reading the main text. The comments are anchored to relevant sections of the content and are placed on an infinite horizontal scroll.
+We build on these insights to investigate whether placing user comments beside the primary text can encourage people to consider diverse perspectives when forming their individual opinions of an issue online. To enable an empirical investigation into this question, we have developed MindMargin, a system that exposes users to comments alongside the primary text as they read. The comments are anchored to relevant sections of the content in a minimally invasive design and are placed on an infinite horizontal scroll to reduce comment congestion.
+
+%cluttering.
 
 %Another study compares the four leading annotation interfaces: footnotes, interlinear commentary, ``sticky-note`` annotations, and marginal comments, concluding that the marginal interface is superior in minimizing distraction and enhancing visibility. The marginal interfaces studied, however, interact with the primary text. They are tagged to boxes around the referenced content to indicate where they are anchored~\cite{AnnotationsStudents}. 
 
-
 %This structure parallels the relationship between content and comments, as interactions with comments are markedly secondary to the primary task of reading or browsing primary content. However, studies on Fluid Documents and annotation interfaces that challenge typographic conventions, such as discussion boards and footnotes, reveal limitations in the traditional vertical interface and suggest alternative horizontal layouts~\cite{Brush,Guzdial,van,AnnotationsStudents,NewsInterfaces,FluidDocs,NB}. 
-
-
 
 %the comments section of many websites has become a popular space for “flame wars.” The social act of “flaming,” or the posting of offensive content, regularly devolves into hostile fights among multiple users, diverting a legitimate discussion topic to an unrelated and often emotionally charged digression. This behavior is examined closely in many research fields, including user interface design, communications, and psychology~\cite{FlamingPsych,FlamingCommunications,FlamingSoftware,FlamingComp}. 
 
-
-
-
-
 %The Fluid Documents project aims to make information added into a page easier to locate in its source document by adjusting the typography of page. One specific study found that a fluid margin interface, as opposed to a fluid interline or overlay interface, had minimal disturbance to the user, because it did not move or occlude the primary text with the secondary text~\cite{FluidDocs}. 
-
 
 %We have thus chosen to anchor comments in MindMargin with a faint dotted line to the edge of the article that corresponds to the y-coordinate of its reference, yet still avoids disturbing the primary text.
 
-
 %Evidence in educational research, however, has shown that anchored annotated notes foster a deeper understanding of the text and facilitate more thoughtful teacher-to-student and peer-to-peer discussions~\cite{AnnotationsStudents,NB}. 
-
-
 
 %Studies on balancing people’s skewed opinions also suggest exposing readers to a variety of relevant perspectives so that they consider views that exist beyond a single article and author’s scope~\cite{ConsiderIt,Politics,NewsCube}. 
 
