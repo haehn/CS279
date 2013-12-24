@@ -1,4 +1,4 @@
-\section {Approach}
+\section {MindMargin}
 
 \marginpar{
 \begin{figure}
@@ -19,7 +19,7 @@
   \end{center}
 \end{figure}
 }
-We implemented two commenting systems. The first commenting system is MindMargin with anchored comments on a horizontal infinite scroll next to the reference medium (see Figure \ref{fig:frontend}). The second commenting system is a traditional vertical interface (see Figure \ref{fig:traditional}). The two prototypes consist of clean user interfaces to avoid design clutter and distraction. 
+We implemented two commenting systems. The first commenting system is MindMargin with anchored comments on a horizontal infinite scroll next to the reference medium (see Figure \ref{fig:frontend}). The second commenting system is a traditional vertical interface (see Figure \ref{fig:traditional}). %The two prototypes consist of clean user interfaces to avoid design clutter and distraction. 
 
 MindMargin is split into two sides: the primary content on the left and and an adjacent commenting system on the right. Comments are dispalyed in a horizontal infinite scroll. Thus, an unrestricted amount of comments can be linked to the reference medium. Navigation within the infinite scroll component can be performed via mousewheel interaction (either left/right or top/down scrolling with the same effect) or by adjustment of a slider on the bottom of the right split screen. While navigating through the infinite scroll, the reference medium remains fixed on the left. Similar to~\cite{FluidDocs, NB}, comments are anchored to the horizontal reference point of the primary content. We minimize disturbance by avoiding interactions with the primary text, as defined by~\cite{FluidDocs}, and using thin dotted lines for anchoring to the article's right edge. This design decision was motivated by MindMargin's inherently more visible and thus distracting interface than the traditional vertical system's. 
 
