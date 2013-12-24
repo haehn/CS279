@@ -31,8 +31,22 @@ Participants were given an initial questionnaire asking basic demographics and r
 In the follow-up questionnaire, reading verification questions were first posed. Participants were then asked their personal stance on the article, whether they liked the article, and whether they agreed with the article. They were also asked to self-report whether they read the comments in the article and to provide two adjectives that described either their reaction to, or a description of, the comments.
 
 \minisubsection{Design and Analysis}
-We use a between-subject factorial design w/ 2 factors
-1st: condition
-2nd factor: prior exposure to article
-and we used the following metrics/measures: ... extreme factor + and a number of subjective measures (adjectives==state that we coded these adjectives; discuss agreement across coders)
-explain what kinds of statistical tests we use
+We use a between-subject factorial design with two factors. The first factor is the prototype condition, MindMargin or the traditional vertical interface. The second factor is participants' prior exposure to the article--``read`` if they have read or skimmed the article before, ``seen`` if they have seen the article but did not read or skim it, and ``none`` if they have neither read nor seen the article previously. To compare conditions, we excluded participants who reported not to have read the comments.
+
+For our first hypothesis, we examined participants' personal stance of the article from 0-Strongly For TFA to 100-Strongly Against TFA after reading and interacting with their respective commenting systems. We computed each participant's SP, or their Stance Polarization, by measuring the distance between their stance and a neutral stance of 50 as $|50 - stance|$. We excluded participants who opted out of answering this question. 
+
+\marginpar{
+\begin{figure}
+  \begin{center}
+  \includegraphics[width=\marginparwidth]{mosaicplot.png}
+  \caption{When using MindMargin, the majority of participants described the comments as positive.}
+  \label{fig:mosaic}
+  \end{center}
+\end{figure}
+}
+
+For our second hypothesis, we examined the two free-text responses describing either participants' reaction to the comments or their description of the comments, both in response to the question: ``What did you think of the comments from the article?`` We asked four independent volunteers, blind to the experiment, to classify these adjectives using a four-bin classifier (``Positive,`` ``Negative,`` ``Neutral,`` and ``Invalid``). They were told to classify the adjectives provided that they were in answer to the free-text question, posed on the survey: ``What did you think of the comments (from article X)?`` We removed adjectives given two or more ``Invalid`` classifications as outliers, which only appeared in the vertical condition. We found that adjectives without uniform encoding observed an uncontradictory mix of classifications: ``Positive`` and ``Neutral`` or ``Neutral`` and ``Negative,`` but never ``Positive`` and ``Negative``. We were thus confident in using the resulting median encodings for the final classification of the specified adjectives. 
+
+XXX Explain what kinds of statistical tests we use
+
+%we examined  the adjectives that participants who read the comments provided in reaction to the comment
